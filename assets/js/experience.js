@@ -9,14 +9,31 @@ const exp = [
     cardImage: "assets/images/experience-page/ftp.jpg",
     place: "Italy, Formigine",
     time: "(Jul, 2020 - Oct, 2022)",
-    desp: "<li>Techinical Support for Small-Medium Businesses</li><li>My team was in charge to monitor and maintaing client/server/network/storage infrastructures</li>",
+    desp: `<p>I worked in the technical support team for small and medium-sized businesses.</p>
+    <p>I was responsible for monitoring and maintaining all systems related to the computer equipment of the client companies.</p>
+    <p>I managed Microsoft 365 Tenants (exchange, office 365), GSUITE;</p>
+    <p>Implementation and management of backups with Veeam B&R;</p>
+    <p>Firewall management (mainly Sophos and Fortigate);</p>
+    <p>Spam management (Libraesva and sophos)</p><br>
+    
+    <p>I carried out projects independently on behalf of customers:</p>
+    <p>- Migrations to 365,</p>
+    <p>- AD, GPO, WSUS and Hyper-V reorganization according to Microsoft best practices</p>`,
   },
   {
     title: "Help Desk",
     cardImage: "assets/images/experience-page/gpi.jpg",
     place: "Italy, Modena",
     time: "(Mar, 2018 - Jun, 2020)",
-    desp: "<li>Worked for Public Administration entities of Modena</li><li>Provided first level support to end users. Both Hardware and Software</li>",
+    desp: `<p>I worked as a Help Desk assistant for three major public entities in Modena:</p>
+    <p>Azienda Ospedaliero-Universitaria Policlinico di Modena,</p>
+    <p>Comune di Modena,</p>
+    <p>Università degli Studi di Modena e Reggio Emilia.</p>
+    <p>I was responsible for the hardware and software maintenance of clients.</p>
+    <p>I provided on-site or first level support over the phone, using remote assistance software.</p><br>
+    <p>I was involved in several special projects:</p>
+    <p>Roll-Out and massive update of remaining PCs with Windows XP to Windows 10 at the Policlinico di Modena</p>
+    <p>Roll-Out and massive update of PCs with Windows 7 to Windows 10 for UniMoRe (AGID adjustment)</p>`,
   },
 ];
 
