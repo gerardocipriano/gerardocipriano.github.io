@@ -5,7 +5,7 @@ AOS.init();
 const experiencecards = document.querySelector(".experience-cards");
 const exp = [
   {
-    title: "Student Developer",
+    title: "System Administrator",
     cardImage: "assets/images/experience-page/ftp.jpg",
     place: "Italy, Formigine",
     time: "(Jul, 2020 - Oct, 2022)",
