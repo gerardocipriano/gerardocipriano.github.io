@@ -1,5 +1,5 @@
-// Contact form: Web3Forms over fetch, accessible validation, distinct idle/sending/success/error states.
-// Without JS the form still posts to Web3Forms and comes back through the hidden redirect field.
+// Contact form: accessible validation, then a native POST to Web3Forms; success comes back via the redirect field.
+// Without JS the form posts the same way.
 
 const $ = (s, r = document) => r.querySelector(s);
 export function initContact({ C, motion }) {
@@ -61,40 +61,27 @@ export function initContact({ C, motion }) {
     sentMsg.focus();
   }
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (busy) return;
+  // Web3Forms sits behind a bot check that rejects cross-origin fetch (the CORS preflight gets a 403),
+  // so a valid form is posted natively and Web3Forms sends the visitor back with ?sent=1.
+  form.addEventListener('submit', (e) => {
+    if (busy) { e.preventDefault(); return; }
     formErr.hidden = true;
     let first = null;
     fields.forEach((f) => { f.touched = true; if (!check(f, true) && !first) first = f.el; });
-    if (first) { first.focus(); return; }
-    if (form.elements.botcheck.checked) { success(); return; } // a bot ticked the honeypot: pretend, send nothing
-
+    if (first) { e.preventDefault(); first.focus(); return; }
+    if (form.elements.botcheck.checked) { e.preventDefault(); success(); return; } // a bot ticked the honeypot: pretend, send nothing
+    fields.forEach((f) => { f.el.value = f.el.value.trim(); });
     setBusy(true);
-    const ctrl = new AbortController(), timer = setTimeout(() => ctrl.abort(), F.timeoutMs || 12000);
-    const body = {
-      access_key: form.elements.access_key.value,
-      subject: form.elements.subject.value,
-      from_name: form.elements.from_name.value,
-      name: form.elements.name.value.trim(),
-      email: form.elements.email.value.trim(),
-      message: form.elements.message.value.trim(),
-      botcheck: '',
-    };
-    let ok = false;
-    try {
-      const res = await fetch(F.endpoint, {
-        method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(body), signal: ctrl.signal,
-      });
-      const data = await res.json().catch(() => ({}));
-      ok = res.ok && data.success === true;
-    } catch { ok = false; }
-    clearTimeout(timer);
-    setBusy(false);
-    if (ok) { form.reset(); fields.forEach((f) => { f.touched = false; f.el.removeAttribute('aria-invalid'); f.err.hidden = true; }); success(); }
-    else { formErr.hidden = false; send.focus(); }
   });
+  // back from a submission or from the browser cache: never leave the form stuck in "sending"
+  window.addEventListener('pageshow', () => { if (busy) setBusy(false); });
+
+  const url = new URL(location.href);
+  if (url.searchParams.get('sent') === '1') {
+    url.searchParams.delete('sent');
+    history.replaceState(null, '', url.pathname + url.search + url.hash);
+    success();
+  }
 
   again.addEventListener('click', () => {
     sent.hidden = true; form.hidden = false; state.textContent = K.states.open;

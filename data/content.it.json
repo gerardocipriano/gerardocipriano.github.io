@@ -694,7 +694,7 @@
       "accessKey": "ca582725-4e9c-4cce-8a8a-6fcc8eccc012",
       "subject": "Nuovo segnale da gerardocipriano.github.io",
       "fromName": "Project GC",
-      "redirect": "https://gerardocipriano.github.io/#contact",
+      "redirect": "https://gerardocipriano.github.io/it/?sent=1#contact",
       "honeypot": "Lascia questo campo vuoto",
       "timeoutMs": 12000,
       "fields": {
