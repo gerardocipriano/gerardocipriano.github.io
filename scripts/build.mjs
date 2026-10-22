@@ -44,6 +44,14 @@ for (const code of Object.keys(LOCALES)) {
 // both files must describe the same site: same top-level sections
 const keysEn = Object.keys(CONTENT.en).sort().join(), keysIt = Object.keys(CONTENT.it).sort().join();
 if (keysEn !== keysIt) errors.push(`${FILES.it} and ${FILES.en} have different top-level keys`);
+// versions and cores are derived from the build log: one open entry, a release id on it, and every core pointing at an entry
+for (const code of Object.keys(LOCALES)) {
+  const C = CONTENT[code], f = FILES[code], open = C.buildLog.entries.filter((e) => !e.to);
+  if (open.length > 1) errors.push(`${f}: ${open.length} build-log entries have no "to": close the previous one with its end month`);
+  if (!R.releaseOf(R.currentEntry(C))) errors.push(`${f}: the current build-log entry needs an id like gcv4 (shown as GC-v4)`);
+  for (const e of C.buildLog.entries) if (!R.releaseOf(e) && !e.version) errors.push(`${f}: build-log entry "${e.id}" is not a release (gcN) and has no version label`);
+  for (const c of C.cores) if (c.source !== 'bench' && !C.buildLog.entries.some((e) => e.id === c.source)) errors.push(`${f}: core "${c.id}" has source "${c.source}", which is not a build-log entry`);
+}
 if (errors.length) { console.error('content is invalid:\n  ' + errors.join('\n  ')); process.exit(1); }
 
 const EN = CONTENT.en;

@@ -38,7 +38,7 @@ function hydrate(C, D) {
   $$('[data-c]').forEach((el) => { const n = D.counts[+el.dataset.c].toLocaleString(R.numLocale(C)); el.innerHTML = `${n}<span aria-hidden="true"> ${R.esc(C.hero.daysShort)}</span><span class="sr"> ${R.esc(C.hero.days)}</span>`; });
   $$('[data-months]').forEach((el) => { el.textContent = D.months[+el.dataset.months] + ' ' + C.buildLog.monthsSuffix; });
   $$('.entry').forEach((el, i) => el.style.setProperty('--lvl', D.levels[i] + '%'));
-  if (new Date().getHours() < 5) $('#eyebrow').textContent = C.hero.eyebrow + C.hero.nightShift;
+  if (new Date().getHours() < 5) $('#eyebrow').textContent = R.fmt(C.hero.eyebrow, D.release) + C.hero.nightShift;
 }
 
 /* ---------- top bar: section tracking and mobile menu (needs no data) ---------- */
@@ -108,6 +108,7 @@ function start(C) {
 
   const H = C.hero, total = C.cores.length;
   const got = new Set();
+  const hintText = () => R.fmt(H.coresHint, { lit: got.size, total }); // {lit}: cores collected so far
   let genesis = null, statusLock = false;
   const vs = $('#vstatus');
   const setStatus = (t) => { vs.textContent = t; };
@@ -131,12 +132,14 @@ function start(C) {
     });
     $('#coreCount').textContent = `${got.size}/${total} ${H.coresSuffix}`;
     $('#barHousing').setAttribute('aria-label', R.fmt(H.housingLabel, { n: got.size, total }));
-    if (got.size === total) { assembled(); const hint = $('#coreHint'); if (hint) hint.hidden = true; }
+    const hint = $('#coreHint');
+    if (hint) hint.textContent = hintText();
+    if (got.size === total) { assembled(); if (hint) hint.hidden = true; }
   }
   function assembled() {
     $('#brand').classList.add('assembled');
     setStatus(H.status.assembled);
-    $('#announce').textContent = H.assembledAnnounce;
+    $('#announce').textContent = R.fmt(H.assembledAnnounce, { lit: total, total });
     if (store.get('gc-assembled') !== '1') { store.set('gc-assembled', '1'); if (!motion.low && genesis) genesis.wave(); }
   }
 
@@ -162,11 +165,11 @@ function start(C) {
       statusLock = false;
       lamp.classList.add('on');
       showTel(false);
-      setStatus(got.size === total ? H.status.assembled : H.status.running);
+      setStatus(got.size === total ? H.status.assembled : R.fmt(H.status.running, D.release));
       if (!motion.low) store.set('gc-boot', '1');
     },
   });
-  genesis.hint(H.coresHint);
+  genesis.hint(hintText());
   genesis.boot(false);
 
   $('#replay').addEventListener('click', () => { if (genesis.phase !== 'run') genesis.boot(true); });

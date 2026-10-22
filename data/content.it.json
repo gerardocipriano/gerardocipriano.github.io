@@ -147,7 +147,7 @@
     ]
   },
   "hero": {
-    "eyebrow": "Progetto GC · Build v3 · Stato: in esecuzione",
+    "eyebrow": "Progetto GC · Build {version} · Stato: in esecuzione",
     "nightShift": " · turno di notte",
     "subtitle": "Cloud engineer. Assemblato un upgrade alla volta.",
     "text": "Progetto e gestisco piattaforme Kubernetes su Google Cloud per clienti SaaS: GKE, Terraform, ArgoCD e Kargo. Tre anni nel cloud, otto nell'IT, dall'help desk ai cluster di produzione.",
@@ -158,7 +158,7 @@
     "skip": "Ferma tutte le animazioni",
     "play": "Avvia animazioni",
     "replay": "Riavvia",
-    "versionId": "GC-v3",
+    "versionId": "{versionId}",
     "portraitLabel": "Ritratto di Gerardo Cipriano fatto di particelle, una per ogni giorno della sua carriera IT dal marzo 2018",
     "portraitSample": "/assets/site/img/portrait-luma.png",
     "telemetryTitle": "In esecuzione ora",
@@ -178,7 +178,7 @@
       "nucleosynthesis": "nucleosintesi",
       "structure": "struttura",
       "singularity": "singolarità",
-      "running": "build v3 · stato: in esecuzione",
+      "running": "build {version} · stato: in esecuzione",
       "assembled": "assemblaggio completo",
       "override": "controllo manuale"
     },
@@ -186,7 +186,7 @@
     "daysShort": "g",
     "coresSuffix": "nuclei",
     "housingLabel": "Nuclei raccolti: {n} su {total}",
-    "assembledAnnounce": "Tutti e sei i nuclei raccolti. Assemblaggio completato.",
+    "assembledAnnounce": "Tutti e {total} i nuclei raccolti. Assemblaggio completato.",
     "nowRunning": {
       "rows": [
         {
@@ -203,7 +203,7 @@
         }
       ]
     },
-    "coresHint": "0/6 nuclei · scorri per caricare"
+    "coresHint": "{lit}/{total} nuclei · scorri per caricare"
   },
   "spec": {
     "ariaLabel": "Numeri chiave",
@@ -236,7 +236,6 @@
       "id": "gke",
       "name": "Piattaforme GKE per SaaS",
       "color": "#4FD1E8",
-      "from": "GC-v3",
       "source": "gcv3",
       "text": "Cluster Autopilot e Standard con Cloud SQL condiviso o dedicato, storage GCS Fuse, certificati gestiti e DNS che si configura da solo.",
       "proof": "In produzione al lavoro · lab pubblico su GitHub"
@@ -245,7 +244,6 @@
       "id": "gitops",
       "name": "GitOps, dall'inizio alla fine",
       "color": "#B69CFF",
-      "from": "GC-v3",
       "source": "gcv3",
       "text": "ArgoCD con Image Updater in produzione. Kargo per la promozione progressiva da dev a staging fino a prod.",
       "proof": "In produzione al lavoro · pipeline Kargo nel mio lab GitOps"
@@ -254,7 +252,6 @@
       "id": "iac",
       "name": "Infrastructure as Code",
       "color": "#F2B33D",
-      "from": "GC-v3",
       "source": "maintenance",
       "text": "Terraform modulare su Google Cloud e Azure. Su GCP: Cloud Run, Cloud SQL regionale, global load balancing, Cloud Build, alerting.",
       "proof": "Moduli per clienti al lavoro · primo IaC pubblico dal 2023"
@@ -263,7 +260,6 @@
       "id": "cicd",
       "name": "CI/CD su qualsiasi piattaforma",
       "color": "#C6F36B",
-      "from": "GC-v3",
       "source": "gcv3",
       "text": "GitHub Actions, GitLab CI e Azure DevOps in produzione. Job pianificati, workflow di rilascio, Jenkins containerizzato nel lab.",
       "proof": "3 piattaforme al lavoro · 6 repo pubblici con workflow"
@@ -272,7 +268,6 @@
       "id": "upg",
       "name": "Upgrade senza drammi",
       "color": "#F4F1E8",
-      "from": "GC-v3",
       "source": "gcv3",
       "text": "Kubernetes dalla v1.24 alla v1.30, da Ingress a Gateway API, VM spostate in container su GKE e AKS, applicazioni migrate tra cluster. Pianificati, provati, senza interruzioni di servizio.",
       "proof": "Al lavoro, on-prem e cloud"
@@ -281,7 +276,6 @@
       "id": "ai",
       "name": "Delivery cloud assistita dall'AI",
       "color": "#FF4F79",
-      "from": "GC-v3",
       "source": "gcv3",
       "text": "Per le migrazioni su GCP scrivo discovery, technical design, stima dei costi e piano di backup e DR. Uso agenti AI per automatizzare e standardizzare questo lavoro. Ho costruito skill per stime dei costi, documenti PDF per i clienti e diagrammi di architettura, e contribuisco alla libreria di skill per agenti AI del team.",
       "proof": "Deliverable per clienti al lavoro · contributor alla libreria AI del team"
@@ -296,10 +290,10 @@
     "moduleLabel": "Modulo installato",
     "monthsSuffix": "mesi",
     "presentLabel": "oggi",
+    "currentLabel": "attuale",
     "entries": [
       {
         "id": "gcv1",
-        "version": "GC-v1",
         "title": "IT Help Desk",
         "from": "2018-03",
         "to": "2020-06",
@@ -309,7 +303,6 @@
       },
       {
         "id": "gcv2",
-        "version": "GC-v2",
         "title": "Sistemista",
         "from": "2020-07",
         "to": "2022-09",
@@ -330,12 +323,10 @@
       },
       {
         "id": "gcv3",
-        "version": "GC-v3 · attuale",
         "title": "Cloud Engineer / DevOps Specialist",
         "from": "2023-09",
         "to": null,
         "org": "Dinova S.r.l., Bologna",
-        "kind": "now",
         "text": "Costruisco e gestisco piattaforme GKE per clienti SaaS: Terraform modulare, cluster Autopilot, Cloud SQL condiviso o dedicato, impacchettati come chart Helm e rilasciati con ArgoCD. Ho portato i cluster da Kubernetes v1.24 a v1.30 e da Ingress a Gateway API senza interruzioni di servizio, ho spostato workload da VM a container su GKE e AKS, e gestisco CI/CD su GitHub Actions, GitLab CI e Azure DevOps. Uso anche agenti AI per produrre documenti di discovery, technical design e stime dei costi.",
         "module": "la paranoia del sistemista, ora dichiarativa"
       }
@@ -541,8 +532,13 @@
         "Le alert policy controllano tutto"
       ]
     },
-    "sideTitle": "Strumenti di contorno: developer experience",
+    "sideTitle": "Progetti collaterali",
     "side": [
+      {
+        "name": "YAMeet",
+        "href": "https://yameet.netlify.app",
+        "text": "Organizza un incontro tra amici: proponi le date, vota, vedi chi c'è. Una web app cozy e pastello su Next.js e Firebase."
+      },
       {
         "name": "ione",
         "href": "https://github.com/gerardocipriano/ione",

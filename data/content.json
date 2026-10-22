@@ -147,7 +147,7 @@
     ]
   },
   "hero": {
-    "eyebrow": "Project GC · Build v3 · Status: running",
+    "eyebrow": "Project GC · Build {version} · Status: running",
     "nightShift": " · night shift",
     "subtitle": "Cloud engineer. Assembled one upgrade at a time.",
     "text": "I design and run Kubernetes platforms on Google Cloud for SaaS clients: GKE, Terraform, ArgoCD and Kargo. Three years in cloud, eight in IT, from the help desk to production clusters.",
@@ -158,7 +158,7 @@
     "skip": "Stop all animations",
     "play": "Play animations",
     "replay": "Replay",
-    "versionId": "GC-v3",
+    "versionId": "{versionId}",
     "portraitLabel": "Portrait of Gerardo Cipriano made of particles, one for each day of his IT career since March 2018",
     "portraitSample": "/assets/site/img/portrait-luma.png",
     "telemetryTitle": "Now running",
@@ -178,7 +178,7 @@
       "nucleosynthesis": "nucleosynthesis",
       "structure": "structure",
       "singularity": "singularity",
-      "running": "build v3 · status: running",
+      "running": "build {version} · status: running",
       "assembled": "assembly complete",
       "override": "manual override"
     },
@@ -186,7 +186,7 @@
     "daysShort": "d",
     "coresSuffix": "cores",
     "housingLabel": "Cores collected: {n} of {total}",
-    "assembledAnnounce": "All six cores collected. Assembly complete.",
+    "assembledAnnounce": "All {total} cores collected. Assembly complete.",
     "nowRunning": {
       "rows": [
         {
@@ -203,7 +203,7 @@
         }
       ]
     },
-    "coresHint": "0/6 cores · scroll to charge"
+    "coresHint": "{lit}/{total} cores · scroll to charge"
   },
   "spec": {
     "ariaLabel": "Key figures",
@@ -236,7 +236,6 @@
       "id": "gke",
       "name": "GKE platforms for SaaS",
       "color": "#4FD1E8",
-      "from": "GC-v3",
       "source": "gcv3",
       "text": "Autopilot and Standard clusters with shared or dedicated Cloud SQL, GCS Fuse storage, managed certificates and DNS that provisions itself.",
       "proof": "In production at work · public lab on GitHub"
@@ -245,7 +244,6 @@
       "id": "gitops",
       "name": "GitOps, end to end",
       "color": "#B69CFF",
-      "from": "GC-v3",
       "source": "gcv3",
       "text": "ArgoCD with Image Updater in production. Kargo for progressive promotion from dev to staging to prod.",
       "proof": "In production at work · Kargo pipeline in my GitOps lab"
@@ -254,7 +252,6 @@
       "id": "iac",
       "name": "Infrastructure as Code",
       "color": "#F2B33D",
-      "from": "GC-v3",
       "source": "maintenance",
       "text": "Modular Terraform on Google Cloud and Azure. On GCP: Cloud Run, regional Cloud SQL, global load balancing, Cloud Build, alerting.",
       "proof": "Client modules at work · first public IaC from 2023"
@@ -263,7 +260,6 @@
       "id": "cicd",
       "name": "CI/CD on any platform",
       "color": "#C6F36B",
-      "from": "GC-v3",
       "source": "gcv3",
       "text": "GitHub Actions, GitLab CI and Azure DevOps in production. Scheduled jobs, release workflows, containerized Jenkins in the lab.",
       "proof": "3 platforms at work · 6 public repos with workflows"
@@ -272,7 +268,6 @@
       "id": "upg",
       "name": "Upgrades without drama",
       "color": "#F4F1E8",
-      "from": "GC-v3",
       "source": "gcv3",
       "text": "Kubernetes v1.24 to v1.30, Ingress to Gateway API, VMs to containers on GKE and AKS, apps moved between clusters. Planned, rehearsed, without service disruption.",
       "proof": "At work, on-prem and cloud"
@@ -281,7 +276,6 @@
       "id": "ai",
       "name": "AI-assisted cloud delivery",
       "color": "#FF4F79",
-      "from": "GC-v3",
       "source": "gcv3",
       "text": "For GCP migrations I write the discovery, the technical design, the cost estimate and the backup and DR plan. I use AI agents to automate and standardize this work. I built skills for cost estimates, client PDF documents and architecture diagrams, and I contribute to the team's AI-agent skill library.",
       "proof": "Client deliverables at work · contributor to the team's AI-agent library"
@@ -296,10 +290,10 @@
     "moduleLabel": "Module installed",
     "monthsSuffix": "mo",
     "presentLabel": "present",
+    "currentLabel": "current",
     "entries": [
       {
         "id": "gcv1",
-        "version": "GC-v1",
         "title": "IT Help Desk",
         "from": "2018-03",
         "to": "2020-06",
@@ -309,7 +303,6 @@
       },
       {
         "id": "gcv2",
-        "version": "GC-v2",
         "title": "System Administrator",
         "from": "2020-07",
         "to": "2022-09",
@@ -330,12 +323,10 @@
       },
       {
         "id": "gcv3",
-        "version": "GC-v3 · current",
         "title": "Cloud Engineer / DevOps Specialist",
         "from": "2023-09",
         "to": null,
         "org": "Dinova S.r.l., Bologna",
-        "kind": "now",
         "text": "I build and run GKE platforms for SaaS clients: modular Terraform, Autopilot clusters, shared or dedicated Cloud SQL, packaged as Helm charts and delivered with ArgoCD. I took clusters from Kubernetes v1.24 to v1.30 and from Ingress to Gateway API without service disruption, moved VM workloads to containers on GKE and AKS, and run CI/CD on GitHub Actions, GitLab CI and Azure DevOps. I also use AI agents to produce discovery documents, technical designs and cost estimates.",
         "module": "the sysadmin's paranoia, now declarative"
       }
@@ -541,8 +532,13 @@
         "Alert policies watch it all"
       ]
     },
-    "sideTitle": "Side tools: developer experience",
+    "sideTitle": "Side projects",
     "side": [
+      {
+        "name": "YAMeet",
+        "href": "https://yameet.netlify.app",
+        "text": "Plan a meetup with friends: propose dates, vote, see who is in. A cozy, pastel web app on Next.js and Firebase."
+      },
       {
         "name": "ione",
         "href": "https://github.com/gerardocipriano/ione",

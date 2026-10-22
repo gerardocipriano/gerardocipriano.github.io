@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://gerardocipriano.github.io/data/schema.json",
   "title": "Project GC site content",
-  "description": "Every text, date, link and core colour shown by the site. Placeholders in curly braces ({v}, {n}, {stage}, {node}, {from}, {total}) are filled at runtime. Dates are ISO: YYYY-MM-DD for days, YYYY-MM for months.",
+  "description": "Every text, date, link and core colour shown by the site. Placeholders in curly braces are filled at runtime: {version} and {versionId} come from the current build-log entry (its id, e.g. gcv4 -> v4, GC-v4); {lit} and {total} are the cores lit and the cores in total; {v}, {n}, {stage}, {node}, {from}, {total} as named in each text. Dates are ISO: YYYY-MM-DD for days, YYYY-MM for months.",
   "type": "object",
   "required": [
     "version",
@@ -266,14 +266,13 @@
     "cores": {
       "type": "array",
       "minItems": 1,
-      "description": "Capabilities. source is the build log entry id that lights the core when scrolled past, or \"bench\" for the test bench.",
+      "description": "Capabilities. source is the build log entry id that lights the core when scrolled past, or \"bench\" for the test bench. The label shows the release of that entry (its id gcN, as GC-vN); a gap shows the next release. There is no from field.",
       "items": {
         "type": "object",
         "required": [
           "id",
           "name",
           "color",
-          "from",
           "source",
           "text",
           "proof"
@@ -299,7 +298,8 @@
         "next",
         "moduleLabel",
         "monthsSuffix",
-        "presentLabel"
+        "presentLabel",
+        "currentLabel"
       ],
       "properties": {
         "entries": {
@@ -308,7 +308,6 @@
             "type": "object",
             "required": [
               "id",
-              "version",
               "title",
               "from",
               "org",
@@ -326,10 +325,23 @@
                 "enum": [
                   "gap",
                   "now"
-                ]
+                ],
+                "description": "gap: a planned break, not a release. Omit it: an entry without \"to\" is the current one (now) and is derived."
+              },
+              "id": {
+                "type": "string",
+                "description": "A release is gcN (gcv3 is shown as GC-v3). Any other id is a gap and needs a version label."
+              },
+              "version": {
+                "type": "string",
+                "description": "Label of a gap entry (e.g. a maintenance window). A release shows GC-vN derived from its id; no version field."
               }
             }
           }
+        },
+        "currentLabel": {
+          "type": "string",
+          "description": "Word shown after the version of the open entry (no \"to\"), e.g. current."
         }
       }
     },

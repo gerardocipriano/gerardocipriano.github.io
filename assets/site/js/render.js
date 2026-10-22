@@ -16,6 +16,19 @@ export function utc(s) { const [y, m = 1, d = 1] = String(s).split('-').map(Numb
 export function todayUTC(now = new Date()) { return Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()); }
 const mmyyyy = (s) => { const [y, m] = String(s).split('-'); return `${m}/${y}`; };
 
+/* ---------- releases: the version on the page comes from the build log, never typed ---------- */
+// "gcv3" -> { version: 'v3', versionId: 'GC-v3' }; null for an entry that is not a release (a gap)
+export const releaseOf = (e) => { const m = /^gc(v\d+)$/i.exec(e?.id || ''); return m ? { version: m[1].toLowerCase(), versionId: 'GC-' + m[1].toLowerCase() } : null; };
+// the open entry (no "to") that starts last; without one, the entry that starts last
+export const currentEntry = (C) => { const E = C.buildLog.entries, open = E.filter((e) => !e.to), pool = open.length ? open : E; return pool.reduce((a, b) => (b.from > a.from ? b : a)); };
+export const currentRelease = (C) => { const e = currentEntry(C); return releaseOf(e) || { version: '', versionId: e.version }; };
+// the label of a core: the release of its source entry; a gap shows the next release; "bench" (no entry) shows the current one
+export const coreRelease = (C, core) => {
+  const E = C.buildLog.entries, i = E.findIndex((e) => e.id === core.source);
+  if (i < 0) return currentRelease(C).versionId;
+  return (E.slice(i).map((e) => releaseOf(e)).find(Boolean) || currentRelease(C)).versionId;
+};
+
 export function derive(C, now = new Date()) {
   const today = todayUTC(now), start = utc(C.career.start);
   const days = Math.max(1, Math.round((today - start) / DAY));
@@ -30,7 +43,7 @@ export function derive(C, now = new Date()) {
   });
   const maxM = Math.max(...months);
   const fmtDay = (d) => { const t = new Date(start + d * DAY); return String(t.getUTCMonth() + 1).padStart(2, '0') + '/' + t.getUTCFullYear(); };
-  return { today, start, days, eraOf, counts, months, levels: months.map((m) => Math.round((m / maxM) * 100)), fmtDay, dayOf: (t) => Math.round((t - start) / DAY) };
+  return { today, start, days, eraOf, counts, months, release: currentRelease(C), levels: months.map((m) => Math.round((m / maxM) * 100)), fmtDay, dayOf: (t) => Math.round((t - start) / DAY) };
 }
 
 export function hash(C) { // FNV-1a over the canonical JSON: tells the runtime whether the pre-render is current
@@ -119,7 +132,7 @@ export function hero(C, D) {
   const now = H.nowRunning.rows.map((r) => `<dt>${esc(r.label)}</dt><dd>${esc(r.value)}</dd>`).join('');
   return `<div class="plate"><h1 id="name"><span class="first">${esc(first)}</span> <span class="last">${esc(rest.join(' '))}</span></h1></div>
   <div class="h-copy">
-    <p class="eyebrow" id="eyebrow">${esc(H.eyebrow)}</p>
+    <p class="eyebrow" id="eyebrow">${esc(fmt(H.eyebrow, D.release))}</p>
     <h2 class="h-sub">${esc(H.subtitle)}</h2>
     <p class="h-text">${esc(H.text)}</p>
     <div class="h-cta"><a class="btn primary" href="${esc(H.primary.href)}">${esc(H.primary.label)}</a>${a(C.links.cv, 'btn')}</div>
@@ -139,8 +152,8 @@ export function hero(C, D) {
     <div class="v-status" id="vstatus" aria-hidden="true">${esc(H.status.standby)}</div>
     <button class="v-replay" id="replay" type="button"><span>${esc(H.replay)}</span></button>
     <div class="ticks" id="ticks" aria-hidden="true"></div>
-    <div class="cap bot" id="plateBase"><span class="v-id" aria-hidden="true">${esc(H.versionId)}</span><span class="housing" id="housing" aria-hidden="true">${housing(C)}</span><em id="coreCount" aria-hidden="true">0/${C.cores.length} ${esc(H.coresSuffix)}</em></div>
-    <p class="core-hint" id="coreHint" hidden>${esc(H.coresHint)}</p>
+    <div class="cap bot" id="plateBase"><span class="v-id" aria-hidden="true">${esc(fmt(H.versionId, D.release))}</span><span class="housing" id="housing" aria-hidden="true">${housing(C)}</span><em id="coreCount" aria-hidden="true">0/${C.cores.length} ${esc(H.coresSuffix)}</em></div>
+    <p class="core-hint" id="coreHint" hidden>${esc(fmt(H.coresHint, { lit: 0, total: C.cores.length }))}</p>
   </div>
   <div class="h-read">
     <h3 class="panel-t">${esc(H.telemetryTitle)}</h3>
@@ -166,12 +179,12 @@ export function log(C, D) {
   const L = C.buildLog, B = C.bench, Lb = B.labels;
   const entries = L.entries.map((e, i) => {
     const cores = C.cores.filter((c) => c.source === e.id).map((c) => c.id);
-    const cls = ['entry', e.kind || ''].filter(Boolean).join(' ');
+    const cls = ['entry', e.kind || (e.to ? '' : 'now')].filter(Boolean).join(' ');
     const dates = `${mmyyyy(e.from)} – ${e.to ? mmyyyy(e.to) : esc(L.presentLabel)}`;
     return `<li class="${cls}" data-entry="${esc(e.id)}"${cores.length ? ` data-cores="${cores.join(' ')}"` : ''} style="--lvl:${D.levels[i]}%">
         <div class="node" aria-hidden="true"><div class="pod"><div class="liq"></div></div><span class="pod-cap" data-months="${i}">${D.months[i]} ${esc(L.monthsSuffix)}</span></div>
         <div class="e-body">
-          <p class="e-ver">${esc(e.version)}</p>
+          <p class="e-ver">${esc(releaseOf(e)?.versionId || e.version)}${e.to ? '' : ` · ${esc(L.currentLabel)}`}</p>
           <h3>${esc(e.title)}</h3>
           <p class="e-meta">${dates} · ${esc(e.org)}</p>
           <p>${esc(e.text)}</p>
@@ -213,7 +226,7 @@ export function log(C, D) {
 
 export function modules(C) {
   const M = C.modules;
-  const cards = C.cores.map((c) => `<li class="core" data-core="${esc(c.id)}"><header>${gem(c.id)}<div><span class="k">${esc(fmt(C.coreFromLabel, { from: c.from }))}</span><h3>${esc(c.name)}</h3></div></header><p>${esc(c.text)}</p><p class="proof">${esc(c.proof)}</p></li>`).join('\n    ');
+  const cards = C.cores.map((c) => `<li class="core" data-core="${esc(c.id)}"><header>${gem(c.id)}<div><span class="k">${esc(fmt(C.coreFromLabel, { from: coreRelease(C, c) }))}</span><h3>${esc(c.name)}</h3></div></header><p>${esc(c.text)}</p><p class="proof">${esc(c.proof)}</p></li>`).join('\n    ');
   return `${secH(M.number, 'mod-h', M.title)}
   <p class="lede">${esc(M.lede)}</p>
   <ul class="cores" id="cores">

@@ -31,6 +31,29 @@ Node 18 or newer, no dependencies. Values computed from today's date are refresh
 days per era, months in the current role, the particle count.
 The pre-rendered page shows them as of the last build.
 
+## Adding a new job
+
+1. In `data/content.json` and `data/content.it.json`, close the current entry in `buildLog.entries`: set its `"to"` to the end month (`"YYYY-MM"`).
+2. Add the new entry to both files, same position in the list: `"id": "gcv4"`, `"from"`, `"to": null`, `title`, `org`, `text`, `module`. Do not write a version: the id is the version (`gcv4` shows as `GC-v4`).
+3. Optional, same in both files: a new era in `career.eras` (a colour and a start month), and a new core in `cores` with `"source": "gcv4"` (the entry that lights it).
+4. `node scripts/build.mjs`, then `node scripts/build.mjs --check`. The build fails if two entries are open, if the current entry has no `gcN` id, or if a core points at an entry that does not exist.
+5. Commit the two content files and the pages the build wrote (`index.html`, `it/index.html`, `404.html` if changed).
+
+Derived from the data, no edit needed:
+
+- The version in the hero eyebrow, the version plate and the status line: `{version}` and `{versionId}`, from the open entry (no `to`).
+- The `current` label after that entry: `buildLog.currentLabel`.
+- The core count in the hint and the announcement: `{lit}` (cores collected) and `{total}` (cores in `cores`).
+- The label of each core, `Core · from GC-vN`: from its `source` entry. A gap (such as a maintenance window) shows the next release.
+- The `current` styling of the entry, and months per entry.
+
+Not derived, write by hand when it changes:
+
+- `hero.nowRunning` (role, stack, certifications), shown as "Now running".
+- Numbers in the narrative texts (for example "three years in cloud", "eight in IT", the key figures in `spec`).
+
+The placeholders are filled by `fmt()` in `assets/site/js/render.js`, in the build and in the browser, the same as `{n}` and `{total}` elsewhere.
+
 ## Change the data source
 
 `data-source.js` is the only module that knows where content comes from.
