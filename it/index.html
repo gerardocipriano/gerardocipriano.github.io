@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="it" data-content-hash="orq4wa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#060B08">
+<meta name="color-scheme" content="dark">
+<!--slot:head--><script>
+(function () {
+  try {
+    var cur = "it", paths = {"en":"/","it":"/it/"}, hop = 'gc-lang-hop';
+    if (localStorage.getItem('gc-lang') || sessionStorage.getItem(hop)) return;
+    var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+    var want = 'en';
+    for (var i = 0; i < langs.length; i++) { var c = String(langs[i] || '').split('-')[0].toLowerCase(); if (c === 'it' || c === 'en') { want = c; break; } }
+    if (want === cur) return;
+    sessionStorage.setItem(hop, '1');
+    location.replace(paths[want] + location.search + location.hash);
+  } catch (e) { /* storage blocked: stay on this page */ }
+})();
+</script>
+<title>Gerardo Cipriano · Cloud Engineer (GCP, GKE, GitOps)</title>
+<meta name="description" content="Cloud engineer che costruisce piattaforme Kubernetes su Google Cloud con GKE, Terraform, ArgoCD e Kargo. Dall'help desk ai cluster di produzione. Con base in Italia.">
+<link rel="canonical" href="https://gerardocipriano.github.io/it/">
+<link rel="alternate" hreflang="en" href="https://gerardocipriano.github.io/">
+<link rel="alternate" hreflang="it" href="https://gerardocipriano.github.io/it/">
+<link rel="alternate" hreflang="x-default" href="https://gerardocipriano.github.io/">
+<meta name="author" content="Gerardo Cipriano">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Gerardo Cipriano">
+<meta property="og:title" content="Gerardo Cipriano · Cloud Engineer">
+<meta property="og:description" content="Progetto e gestisco piattaforme GKE su Google Cloud. Leggi il build log: dall'help desk a Kubernetes, un upgrade alla volta.">
+<meta property="og:url" content="https://gerardocipriano.github.io/it/">
+<meta property="og:image" content="https://gerardocipriano.github.io/assets/site/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ritratto di Gerardo Cipriano fatto di particelle verdi dentro un vaso da laboratorio, accanto al nome e alla scritta Cloud Engineer, GKE, Terraform, GitOps">
+<meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="profile:first_name" content="Gerardo">
+<meta property="profile:last_name" content="Cipriano">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gerardo Cipriano · Cloud Engineer">
+<meta name="twitter:description" content="Progetto e gestisco piattaforme GKE su Google Cloud. Leggi il build log: dall'help desk a Kubernetes, un upgrade alla volta.">
+<meta name="twitter:image" content="https://gerardocipriano.github.io/assets/site/img/og-image.png">
+<style id="gc-theme">:root{--core-gke:#4FD1E8;--core-gitops:#B69CFF;--core-iac:#F2B33D;--core-cicd:#C6F36B;--core-upg:#F4F1E8;--core-ai:#FF4F79;--era-0:#3E7D5A;--era-1:#6FB98E;--era-2:#F2B33D;--era-3:#B8FFD0}[data-core="gke"]{--c:var(--core-gke)}[data-core="gitops"]{--c:var(--core-gitops)}[data-core="iac"]{--c:var(--core-iac)}[data-core="cicd"]{--c:var(--core-cicd)}[data-core="upg"]{--c:var(--core-upg)}[data-core="ai"]{--c:var(--core-ai)}[data-era="0"]{--c:var(--era-0)}[data-era="1"]{--c:var(--era-1)}[data-era="2"]{--c:var(--era-2)}[data-era="3"]{--c:var(--era-3)}</style>
+<script type="application/ld+json">{
+ "@context": "https://schema.org",
+ "@type": "Person",
+ "name": "Gerardo Cipriano",
+ "url": "https://gerardocipriano.github.io/",
+ "image": "https://gerardocipriano.github.io/assets/site/img/og-image.png",
+ "jobTitle": "Cloud Engineer",
+ "description": "Cloud engineer che costruisce e gestisce piattaforme Kubernetes su Google Cloud, e ci rilascia sopra con GitOps.",
+ "worksFor": {
+  "@type": "Organization",
+  "name": "Dinova S.r.l."
+ },
+ "alumniOf": {
+  "@type": "CollegeOrUniversity",
+  "name": "University of Bologna"
+ },
+ "homeLocation": {
+  "@type": "Place",
+  "name": "Emilia-Romagna, Italia"
+ },
+ "knowsLanguage": [
+  "en",
+  "it"
+ ],
+ "knowsAbout": [
+  "Google Cloud",
+  "Kubernetes",
+  "GKE",
+  "Terraform",
+  "ArgoCD",
+  "Kargo",
+  "GitOps",
+  "CI/CD",
+  "Helm",
+  "Azure",
+  "AKS"
+ ],
+ "sameAs": [
+  "https://www.linkedin.com/in/gerardo-cipriano",
+  "https://github.com/gerardocipriano"
+ ],
+ "hasCredential": [
+  {
+   "@type": "EducationalOccupationalCredential",
+   "name": "Google Cloud Associate Cloud Engineer",
+   "credentialCategory": "Professional certification",
+   "recognizedBy": {
+    "@type": "Organization",
+    "name": "Google Cloud"
+   }
+  },
+  {
+   "@type": "EducationalOccupationalCredential",
+   "name": "Microsoft Azure Administrator Associate (AZ-104)",
+   "credentialCategory": "Professional certification",
+   "recognizedBy": {
+    "@type": "Organization",
+    "name": "Microsoft"
+   },
+   "url": "https://www.credly.com/badges/f051ec71-d33c-45ea-85c9-f8ff2670bb09"
+  }
+ ]
+}</script><!--/slot:head-->
+<link rel="icon" href="/assets/site/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/site/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/site/img/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
+<link rel="stylesheet" href="/assets/site/site.css">
+<link rel="stylesheet" href="/assets/site/fx.css">
+<link rel="stylesheet" href="/assets/site/dashboard-viz.css">
+<link rel="preload" as="fetch" href="/data/content.it.json" crossorigin>
+<link rel="preload" as="image" href="/assets/site/img/portrait-luma.png">
+<link rel="modulepreload" href="/assets/site/js/render.js">
+<link rel="modulepreload" href="/assets/site/js/data-source.js">
+<link rel="modulepreload" href="/assets/site/js/genesis.js">
+<link rel="modulepreload" href="/assets/site/js/bench.js">
+<link rel="modulepreload" href="/assets/site/js/lab.js">
+<link rel="modulepreload" href="/assets/site/js/contact.js">
+<script>
+  // Motion flag before first paint, so a visitor who skipped the animation never sees it start.
+  try { if (localStorage.getItem('gc-motion') === 'low') document.documentElement.dataset.motion = 'low'; } catch (e) {}
+  document.documentElement.classList.add('js');
+</script>
+<script type="module" src="/assets/site/js/main.js"></script>
+</head>
+<body>
+<a class="skip" href="#main" data-slot="skip"><!--slot:skip-->Vai al contenuto<!--/slot:skip--></a>
+
+<svg width="0" height="0" class="defs" aria-hidden="true" focusable="false">
+  <symbol id="i-person" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="9" cy="10" r="2.5"/><path d="M5.5 17c.6-2.2 2-3.3 3.5-3.3s2.9 1.1 3.5 3.3M14.5 9h4M14.5 12.5h4"/></symbol>
+  <symbol id="i-branch" viewBox="0 0 24 24"><circle cx="6" cy="5" r="2"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="8" r="2"/><path d="M6 7v10M18 10c0 4-6 3.5-11 7.5"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M12 10v7M9 14l3 3 3-3"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.2v.3"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M14 6l6 6-6 6"/></symbol>
+</svg>
+
+<!-- Structure only. Every slot is filled from data/content*.json: by scripts/build.mjs at build
+     time (complete HTML for crawlers and no-JS visitors) and again in the browser by
+     assets/site/js/render.js when the data source returns content newer than the build. -->
+<header class="bar" id="bar" data-slot="bar"><!--slot:bar--><a class="brand" href="#top" id="brand" aria-label="Gerardo Cipriano, torna all'inizio"><span class="lamp" id="lamp" aria-hidden="true"></span><span aria-hidden="true">Gerardo Cipriano</span></a>
+  <span class="housing bar-housing" id="barHousing" role="img" aria-label="Nuclei raccolti: 0 su 6"><svg class="gem" data-core="gke" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><svg class="gem" data-core="gitops" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><svg class="gem" data-core="iac" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><svg class="gem" data-core="cicd" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><svg class="gem" data-core="upg" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><svg class="gem" data-core="ai" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg></span>
+  <nav class="nav" aria-label="Sezioni"><ul class="nav-links" id="navLinks"><li><a href="#log">Esperienza</a></li><li><a href="#cases">Casi di studio</a></li><li><a href="#modules">Competenze</a></li><li><a href="#experiments">Progetti</a></li><li><a href="#certs">Certificazioni</a></li><li><a href="#contact">Contatti</a></li></ul></nav>
+  <nav class="lang-switch lang-switch-bar" aria-label="Lingua"><a class="lang-link" href="/" lang="en" hreflang="en" data-lang="en">EN</a><span class="lang-sep" aria-hidden="true">/</span><a class="lang-link" href="/it/" lang="it" hreflang="it" data-lang="it" aria-current="true">IT</a></nav>
+  <a class="btn bar-cv" href="/assets/docs/Gerardo_Cipriano_CV_GCP.pdf" type="application/pdf">Scarica CV<span class="sr"> (PDF)</span></a>
+  <button class="menu-btn" id="menuBtn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><!--/slot:bar--></header>
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Sezioni" hidden data-slot="menu"><!--slot:menu--><ul><li><a href="#log">Esperienza</a></li><li><a href="#cases">Casi di studio</a></li><li><a href="#modules">Competenze</a></li><li><a href="#experiments">Progetti</a></li><li><a href="#certs">Certificazioni</a></li><li><a href="#contact">Contatti</a></li></ul><nav class="lang-switch lang-switch-menu" aria-label="Lingua"><a class="lang-link" href="/" lang="en" hreflang="en" data-lang="en">EN</a><span class="lang-sep" aria-hidden="true">/</span><a class="lang-link" href="/it/" lang="it" hreflang="it" data-lang="it" aria-current="true">IT</a></nav><button class="btn menu-close" id="menuClose" type="button">Chiudi menu</button><!--/slot:menu--></div>
+
+<main id="main" tabindex="-1">
+<section class="hero" id="top" aria-labelledby="name" data-slot="hero"><!--slot:hero--><div class="plate"><h1 id="name"><span class="first">Gerardo</span> <span class="last">Cipriano</span></h1></div>
+  <div class="h-copy">
+    <p class="eyebrow" id="eyebrow">Progetto GC · Build v3 · Stato: in esecuzione</p>
+    <h2 class="h-sub">Cloud engineer. Assemblato un upgrade alla volta.</h2>
+    <p class="h-text">Progetto e gestisco piattaforme Kubernetes su Google Cloud per clienti SaaS: GKE, Terraform, ArgoCD e Kargo. Tre anni nel cloud, otto nell'IT, dall'help desk ai cluster di produzione.</p>
+    <div class="h-cta"><a class="btn primary" href="#log">Leggi il build log</a><a class="btn" href="/assets/docs/Gerardo_Cipriano_CV_GCP.pdf" type="application/pdf">Scarica il CV (PDF)</a></div>
+    <p class="h-links"><a href="https://www.linkedin.com/in/gerardo-cipriano" rel="noopener">LinkedIn</a><span aria-hidden="true">·</span><a href="https://github.com/gerardocipriano" rel="noopener">GitHub</a></p>
+    <button class="skipanim" id="skipanim" type="button" aria-pressed="false">Ferma tutte le animazioni</button>
+  </div>
+  <div class="vessel" id="vessel">
+    <div class="cap top" aria-hidden="true"></div>
+    <div class="glass" id="glass" role="img" aria-label="Ritratto di Gerardo Cipriano fatto di particelle, una per ogni giorno della sua carriera IT dal marzo 2018">
+      <picture>
+        <source type="image/avif" srcset="/assets/site/img/portrait-duo-420.avif 420w, /assets/site/img/portrait-duo-840.avif 840w" sizes="(min-width: 900px) 460px, 70vw">
+        <source type="image/webp" srcset="/assets/site/img/portrait-duo-420.webp 420w, /assets/site/img/portrait-duo-840.webp 840w" sizes="(min-width: 900px) 460px, 70vw">
+        <img src="/assets/site/img/portrait-duo-420.jpg" width="420" height="603" alt="" decoding="async">
+      </picture>
+      <canvas id="cv" aria-hidden="true"></canvas>
+    </div>
+    <div class="v-status" id="vstatus" aria-hidden="true">standby</div>
+    <button class="v-replay" id="replay" type="button"><span>Riavvia</span></button>
+    <div class="ticks" id="ticks" aria-hidden="true"></div>
+    <div class="cap bot" id="plateBase"><span class="v-id" aria-hidden="true">GC-v3</span><span class="housing" id="housing" aria-hidden="true"><svg class="gem" data-core="gke" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><svg class="gem" data-core="gitops" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><svg class="gem" data-core="iac" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><svg class="gem" data-core="cicd" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><svg class="gem" data-core="upg" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><svg class="gem" data-core="ai" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg></span><em id="coreCount" aria-hidden="true">0/6 nuclei</em></div>
+    <p class="core-hint" id="coreHint" hidden>0/6 nuclei · scorri per caricare</p>
+  </div>
+  <div class="h-read">
+    <h3 class="panel-t">In esecuzione ora</h3>
+    <dl class="kv" id="telemetry" aria-hidden="true" hidden>
+      <dt>T+</dt><dd id="tT">2.50 s</dd><dt>Temperatura</dt><dd id="tK">2.7 K</dd><dt>Data</dt><dd id="tD">10/2026</dd>
+      <dt>Particelle</dt><dd id="tN">3157</dd><dt>Fase</dt><dd id="tP">struttura</dd>
+    </dl>
+    <dl class="kv now" id="nowRunning"><dt>Ruolo</dt><dd>Cloud Engineer · Dinova</dd><dt>Stack</dt><dd>GKE · Terraform · ArgoCD · Kargo</dd><dt>Certificato</dt><dd>Google Cloud ACE · Azure AZ-104</dd></dl>
+    <h3 class="panel-t" id="comp-h">Composizione</h3>
+    <ul class="eras" aria-labelledby="comp-h"><li><button class="era" type="button" data-era="0" disabled aria-pressed="false"><i aria-hidden="true"></i>Help desk<small data-c="0">853<span aria-hidden="true"> g</span><span class="sr"> giorni</span></small></button></li><li><button class="era" type="button" data-era="1" disabled aria-pressed="false"><i aria-hidden="true"></i>Sistemista<small data-c="1">822<span aria-hidden="true"> g</span><span class="sr"> giorni</span></small></button></li><li><button class="era" type="button" data-era="2" disabled aria-pressed="false"><i aria-hidden="true"></i>Università<small data-c="2">335<span aria-hidden="true"> g</span><span class="sr"> giorni</span></small></button></li><li><button class="era" type="button" data-era="3" disabled aria-pressed="false"><i aria-hidden="true"></i>Cloud<small data-c="3">1147<span aria-hidden="true"> g</span><span class="sr"> giorni</span></small></button></li></ul>
+    <p class="note">Una particella per ogni giorno nell'IT dal marzo 2018, disposte in ordine di data: gli anni dell'help desk alla base, quelli nel cloud in cima.</p>
+  </div><!--/slot:hero--></section>
+<section class="spec-wrap" id="spec" aria-label="Numeri chiave" data-slot="spec"><!--slot:spec--><dl class="spec"><div><dt>Uptime nell'IT</dt><dd><b>8+ anni</b><span>dal 2018</span></dd></div><div><dt>Cloud e platform</dt><dd><b>3 anni</b><span>GKE, Terraform, GitOps</span></dd></div><div><dt>Cloud certificati</dt><dd><b>2</b><span>Google Cloud + Azure, validi fino al 2027</span></dd></div><div><dt>Upgrade più grande</dt><dd><b>6 versioni minori</b><span>Kubernetes v1.24 → v1.30, on-prem e cloud, senza interruzioni di servizio</span></dd></div></dl>
+  <p class="spec-foot">Con base in Emilia-Romagna, Italia · Inglese (professionale) e italiano (madrelingua)</p><!--/slot:spec--></section>
+<section class="sec log" id="log" aria-labelledby="log-h" data-slot="log"><!--slot:log--><header class="sec-h"><span class="n" aria-hidden="true">02</span><h2 id="log-h">Esperienza</h2></header>
+  <p class="lede">Il build log: ogni versione ha conservato i moduli della precedente. Nulla è stato buttato, solo aggiornato.</p>
+  <div class="entries" id="entries">
+    <div class="rail" aria-hidden="true"><div class="charge" id="charge"></div></div>
+    <ol class="list">
+      <li class="entry" data-entry="gcv1" style="--lvl:74%">
+        <div class="node" aria-hidden="true"><div class="pod"><div class="liq"></div></div><span class="pod-cap" data-months="0">28 mesi</span></div>
+        <div class="e-body">
+          <p class="e-ver">GC-v1</p>
+          <h3>IT Help Desk</h3>
+          <p class="e-meta">03/2018 – 06/2020 · GPI S.p.A., Modena</p>
+          <p>Primo contatto con utenti reali e disservizi reali. Supporto in sede e da remoto per il Comune di Modena, il Policlinico di Modena, UniMoRe e AUSL Modena. Migrazione a Windows 10 al Policlinico e in UniMoRe per rispettare i requisiti AGID.</p>
+          <p class="module"><small>Modulo installato</small> <code>empatia per chi apre il ticket</code></p>
+          
+        </div>
+      </li>
+      <li class="entry" data-entry="gcv2" style="--lvl:71%">
+        <div class="node" aria-hidden="true"><div class="pod"><div class="liq"></div></div><span class="pod-cap" data-months="1">27 mesi</span></div>
+        <div class="e-body">
+          <p class="e-ver">GC-v2</p>
+          <h3>Sistemista</h3>
+          <p class="e-meta">07/2020 – 09/2022 · F.T.P. S.r.l., Formigine</p>
+          <p>Gestione dell'infrastruttura per piccole e medie imprese: VMware ESXi, Hyper-V, Windows Server, Active Directory, GPO, WSUS, DHCP e DNS. Backup con Veeam, firewall Sophos e Fortinet, migrazioni M365 completate end to end.</p>
+          <p class="module"><small>Modulo installato</small> <code>un backup esiste davvero solo dopo averlo ripristinato</code></p>
+          
+        </div>
+      </li>
+      <li class="entry gap" data-entry="maintenance" data-cores="iac" style="--lvl:29%">
+        <div class="node" aria-hidden="true"><div class="pod"><div class="liq"></div></div><span class="pod-cap" data-months="2">11 mesi</span></div>
+        <div class="e-body">
+          <p class="e-ver">Finestra di manutenzione programmata</p>
+          <h3>Focus sulla laurea</h3>
+          <p class="e-meta">10/2022 – 08/2023 · University of Bologna</p>
+          <p>Undici mesi dedicati alla laurea in Tecnologie dei Sistemi Informatici all'Università di Bologna, conseguita nel 2024. Qui ho scritto il mio primo Terraform su Google Cloud.</p>
+          <p class="module"><small>Modulo installato</small> <code>infrastruttura come codice</code></p>
+          <p class="chips"><span class="chip" data-core="iac"><svg class="gem" data-core="iac" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><span><small>Competenza</small><br>Infrastructure as Code</span></span></p>
+        </div>
+      </li>
+      <li class="entry now" data-entry="gcv3" data-cores="gke gitops cicd upg ai" style="--lvl:100%">
+        <div class="node" aria-hidden="true"><div class="pod"><div class="liq"></div></div><span class="pod-cap" data-months="3">38 mesi</span></div>
+        <div class="e-body">
+          <p class="e-ver">GC-v3 · attuale</p>
+          <h3>Cloud Engineer / DevOps Specialist</h3>
+          <p class="e-meta">09/2023 – oggi · Dinova S.r.l., Bologna</p>
+          <p>Costruisco e gestisco piattaforme GKE per clienti SaaS: Terraform modulare, cluster Autopilot, Cloud SQL condiviso o dedicato, impacchettati come chart Helm e rilasciati con ArgoCD. Ho portato i cluster da Kubernetes v1.24 a v1.30 e da Ingress a Gateway API senza interruzioni di servizio, ho spostato workload da VM a container su GKE e AKS, e gestisco CI/CD su GitHub Actions, GitLab CI e Azure DevOps. Uso anche agenti AI per produrre documenti di discovery, technical design e stime dei costi.</p>
+          <p class="module"><small>Modulo installato</small> <code>la paranoia del sistemista, ora dichiarativa</code></p>
+          <p class="chips"><span class="chip" data-core="gke"><svg class="gem" data-core="gke" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><span><small>Competenza</small><br>Piattaforme GKE per SaaS</span></span><span class="chip" data-core="gitops"><svg class="gem" data-core="gitops" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><span><small>Competenza</small><br>GitOps, dall'inizio alla fine</span></span><span class="chip" data-core="cicd"><svg class="gem" data-core="cicd" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><span><small>Competenza</small><br>CI/CD su qualsiasi piattaforma</span></span><span class="chip" data-core="upg"><svg class="gem" data-core="upg" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><span><small>Competenza</small><br>Upgrade senza drammi</span></span><span class="chip" data-core="ai"><svg class="gem" data-core="ai" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><span><small>Competenza</small><br>Delivery cloud assistita dall'AI</span></span></p>
+        </div>
+      </li>
+    </ol>
+    <p class="next"><b>$ next-version --status</b> → <span class="cursor">compilazione in corso...</span></p>
+  </div>
+  <div class="bench" id="bench" role="region" aria-labelledby="bench-h">
+    <div class="bench-h"><h3 id="bench-h">Banco di prova · Aggiorna il cluster</h3><span class="sim">Simulazione · i numeri non sono reali</span></div>
+    <div class="bench-b">
+      <div class="stage">
+        <div class="cp" id="cp"><div><small>Control plane</small><b id="cpv">v1.24</b></div>
+          <div class="cp-actions"><button class="btn primary" id="cpUp" type="button">Aggiorna a v1.25</button><button class="btn" id="jump" type="button">Salta a v1.30</button></div></div>
+        <canvas class="lane" id="lane" aria-hidden="true"></canvas>
+        <ul class="nodes" id="nodes" aria-label="Nodi worker"></ul>
+        <p class="pending" id="pending"></p>
+      </div>
+      <div class="side">
+        <div class="ctr"><div><small>Richieste servite</small><b id="served">0</b></div><div class="drop" id="dropBox"><small>Perse</small><b id="dropped">0</b></div></div>
+        <p class="msg" id="msg" role="status" aria-live="polite">Il cluster gira su v1.24. Portalo a v1.30 senza perdere richieste. Aggiorna il control plane, poi ogni nodo.</p>
+        <p class="sr" id="benchLive" role="status" aria-live="polite"></p>
+        <button class="btn" id="auto" type="button" hidden>Automatizza il resto</button>
+        <button class="btn" id="reset" type="button">Ripristina</button>
+        <p class="static-note">Regola reale: una versione minore alla volta, prima il control plane. Aggiorna un nodo alla volta, così i pod hanno sempre dove andare.</p>
+      </div>
+    </div>
+  </div><!--/slot:log--></section>
+<section class="sec cases" id="cases" aria-labelledby="cases-h" data-slot="cases"><!--slot:cases--><header class="sec-h"><span class="n" aria-hidden="true">03</span><h2 id="cases-h">Casi di studio</h2></header>
+  <p class="lede">Quattro problemi su Google Cloud, con i vincoli e la decisione per ciascuno. I clienti non sono citati.</p>
+  <div class="case-list">
+    <article class="case" aria-labelledby="case-0-h">
+      <p class="case-n" aria-hidden="true">01</p>
+      <h3 id="case-0-h">Upgrade di Kubernetes dalla 1.24 alla 1.30</h3>
+      <dl class="case-dl">
+        <div><dt>Contesto</dt><dd>Cluster ancora su Kubernetes v1.24, on-prem e in cloud, già fuori dal supporto upstream.</dd></div>
+        <div><dt>Vincolo</dt><dd>Il traffico di produzione non poteva fermarsi. Ogni passo andava pianificato e provato prima.</dd></div>
+        <div><dt>Decisione</dt><dd>Una versione minore alla volta, prima il control plane, poi i nodi aggiornati uno alla volta, così i pod hanno sempre dove andare.</dd></div>
+        <div class="case-result"><dt>Risultato</dt><dd>I cluster girano su v1.30 senza interruzioni di servizio.</dd></div>
+      </dl>
+    </article>
+    <article class="case" aria-labelledby="case-1-h">
+      <p class="case-n" aria-hidden="true">02</p>
+      <h3 id="case-1-h">Storage condiviso su GKE senza NFS</h3>
+      <dl class="case-dl">
+        <div><dt>Contesto</dt><dd>I workload SaaS su GKE condividevano file via NFS: un server in più da patchare, dimensionare e backuppare.</dd></div>
+        <div><dt>Vincolo</dt><dd>Nessuna interruzione di servizio per i tenant.</dd></div>
+        <div><dt>Decisione</dt><dd>NFS sostituito con GCS Fuse, provisionato con Terraform e montato tramite il chart Helm.</dd></div>
+        <div class="case-result"><dt>Risultato</dt><dd>Per questo workload non resta nessun server NFS da patchare, dimensionare o backuppare.</dd></div>
+      </dl>
+    </article>
+    <article class="case" aria-labelledby="case-2-h">
+      <p class="case-n" aria-hidden="true">03</p>
+      <h3 id="case-2-h">Release promosse da ArgoCD Image Updater</h3>
+      <dl class="case-dl">
+        <div><dt>Contesto</dt><dd>Ogni nuova immagine richiedeva una modifica manuale dei manifest prima di arrivare in produzione.</dd></div>
+        <div><dt>Vincolo</dt><dd>Ogni modifica doveva passare da Git, così lo stato di ogni ambiente resta verificabile.</dd></div>
+        <div><dt>Decisione</dt><dd>ArgoCD Image Updater rileva le nuove immagini e aggiorna l'ambiente target da Git, senza modifiche manuali nel percorso di rilascio.</dd></div>
+        <div class="case-result"><dt>Risultato</dt><dd>Le nuove build arrivano negli ambienti live senza un passaggio manuale, e Git mostra cosa gira dove.</dd></div>
+      </dl>
+    </article>
+    <article class="case" aria-labelledby="case-3-h">
+      <p class="case-n" aria-hidden="true">04</p>
+      <h3 id="case-3-h">Stime dei costi cloud automatizzate</h3>
+      <dl class="case-dl">
+        <div><dt>Contesto</dt><dd>Le stime dei costi cloud richiedevano troppo tempo se fatte a mano, ed era rischioso condividerle con i clienti.</dd></div>
+        <div><dt>Vincolo</dt><dd>Ogni cifra deve essere tracciabile, e i dettagli interni non devono mai arrivare nel file del cliente.</dd></div>
+        <div><dt>Decisione</dt><dd>Una skill di agenti AI legge i listini ufficiali dalle API di billing del provider e genera workbook basati su formule da un modello dati. Le viste per il cliente e quelle interne sono separate.</dd></div>
+        <div class="case-result"><dt>Risultato</dt><dd>Ogni stima viene ricalcolata, controllata per termini riservati e rivista da un agente indipendente prima di arrivare al cliente.</dd></div>
+      </dl>
+    </article>
+  </div><!--/slot:cases--></section>
+<section class="sec modules" id="modules" aria-labelledby="mod-h" data-slot="modules"><!--slot:modules--><header class="sec-h"><span class="n" aria-hidden="true">04</span><h2 id="mod-h">Competenze</h2></header>
+  <p class="lede">Moduli principali: cosa porto in un platform team e dove stanno le prove.</p>
+  <ul class="cores" id="cores">
+    <li class="core" data-core="gke"><header><svg class="gem" data-core="gke" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><div><span class="k">Nucleo · dal GC-v3</span><h3>Piattaforme GKE per SaaS</h3></div></header><p>Cluster Autopilot e Standard con Cloud SQL condiviso o dedicato, storage GCS Fuse, certificati gestiti e DNS che si configura da solo.</p><p class="proof">In produzione al lavoro · lab pubblico su GitHub</p></li>
+    <li class="core" data-core="gitops"><header><svg class="gem" data-core="gitops" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><div><span class="k">Nucleo · dal GC-v3</span><h3>GitOps, dall'inizio alla fine</h3></div></header><p>ArgoCD con Image Updater in produzione. Kargo per la promozione progressiva da dev a staging fino a prod.</p><p class="proof">In produzione al lavoro · pipeline Kargo nel mio lab GitOps</p></li>
+    <li class="core" data-core="iac"><header><svg class="gem" data-core="iac" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><div><span class="k">Nucleo · dal GC-v3</span><h3>Infrastructure as Code</h3></div></header><p>Terraform modulare su Google Cloud e Azure. Su GCP: Cloud Run, Cloud SQL regionale, global load balancing, Cloud Build, alerting.</p><p class="proof">Moduli per clienti al lavoro · primo IaC pubblico dal 2023</p></li>
+    <li class="core" data-core="cicd"><header><svg class="gem" data-core="cicd" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><div><span class="k">Nucleo · dal GC-v3</span><h3>CI/CD su qualsiasi piattaforma</h3></div></header><p>GitHub Actions, GitLab CI e Azure DevOps in produzione. Job pianificati, workflow di rilascio, Jenkins containerizzato nel lab.</p><p class="proof">3 piattaforme al lavoro · 6 repo pubblici con workflow</p></li>
+    <li class="core" data-core="upg"><header><svg class="gem" data-core="upg" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><div><span class="k">Nucleo · dal GC-v3</span><h3>Upgrade senza drammi</h3></div></header><p>Kubernetes dalla v1.24 alla v1.30, da Ingress a Gateway API, VM spostate in container su GKE e AKS, applicazioni migrate tra cluster. Pianificati, provati, senza interruzioni di servizio.</p><p class="proof">Al lavoro, on-prem e cloud</p></li>
+    <li class="core" data-core="ai"><header><svg class="gem" data-core="ai" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><div><span class="k">Nucleo · dal GC-v3</span><h3>Delivery cloud assistita dall'AI</h3></div></header><p>Per le migrazioni su GCP scrivo discovery, technical design, stima dei costi e piano di backup e DR. Uso agenti AI per automatizzare e standardizzare questo lavoro. Ho costruito skill per stime dei costi, documenti PDF per i clienti e diagrammi di architettura, e contribuisco alla libreria di skill per agenti AI del team.</p><p class="proof">Deliverable per clienti al lavoro · contributor alla libreria AI del team</p></li>
+  </ul>
+  <p class="also">Anche a bordo: Helm · Docker · Bash · Python · Azure (AKS, Azure DevOps) · Prometheus e Grafana · Linux · networking</p><!--/slot:modules--></section>
+<section class="sec experiments" id="experiments" aria-labelledby="exp-h" data-slot="experiments"><!--slot:experiments--><header class="sec-h"><span class="n" aria-hidden="true">05</span><h2 id="exp-h">Progetti</h2></header>
+  <p class="lede">Progetti open source nati per imparare, per risolvere problemi miei, o per entrambe le cose. Tutto il codice è pubblico.</p>
+  <article class="xp" aria-labelledby="xp0-h">
+    <div class="xp-text">
+      <p class="xp-meta">gke-gitlab-argocd-all-in-one-setup · 2026</p>
+      <h3 id="xp0-h">Lab GitOps con un solo comando</h3>
+      <p>Un comando avvia un ambiente GitOps completo su kind o GKE: GitLab CE come server Git, ArgoCD con il pattern app-of-apps e Kargo che promuove le release da dev a staging a prod. Una demo guidata in 10 passi la illustra e un teardown guidato la smonta. Su GKE il control plane è raggiungibile solo tramite il suo endpoint DNS, con IAM.</p>
+      <ul class="tags" aria-label="Stack"><li>GKE</li><li>kind</li><li>ArgoCD</li><li>Kargo</li><li>GitLab CE</li><li>Bash</li></ul>
+      <p class="xp-cta"><a class="btn primary" href="https://github.com/gerardocipriano/gke-gitlab-argocd-all-in-one-setup" rel="noopener" aria-describedby="xp0-h">Apri il repo</a><a class="btn" href="https://github.com/gerardocipriano/gke-gitlab-argocd-all-in-one-setup/blob/main/docs/KARGO-DEMO.md" rel="noopener" aria-describedby="xp0-h">Esegui la demo</a></p>
+    </div>
+    <div class="xp-vis freight" id="freight">
+      <p class="vis-t">Promuovi il freight <span class="sim">Simulazione</span></p>
+      <div class="fr-track" id="frTrack"><div class="fr-col fr-wh"><span class="fr-name">Magazzino</span><span class="fr-sub">nuovo freight</span></div><div class="fr-col" data-stage="0"><span class="fr-name">dev</span><span class="fr-sub">1 replica</span><span class="fr-pods"><i></i></span></div><div class="fr-col" data-stage="1"><span class="fr-name">staging</span><span class="fr-sub">2 repliche</span><span class="fr-pods"><i></i><i></i></span></div><div class="fr-col" data-stage="2"><span class="fr-name">prod</span><span class="fr-sub">3 repliche</span><span class="fr-pods"><i></i><i></i><i></i></span><svg class="fr-ring" viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="18" r="15" class="bg"/><circle cx="18" cy="18" r="15" class="fg" pathLength="100"/></svg></div><div class="fr-cube" id="frCube" aria-hidden="true"><i></i></div></div>
+      <p class="fr-msg" id="frMsg" role="status" aria-live="polite">Il freight aspetta in magazzino.</p>
+      <p class="fr-actions"><button class="btn primary" id="frBtn" type="button">Promuovi a dev</button></p>
+    </div>
+  </article>
+  <article class="xp" aria-labelledby="xp1-h">
+    <div class="xp-text">
+      <p class="xp-meta">bekky · 2026</p>
+      <h3 id="xp1-h">bekky: backup cifrati di un'intera workstation</h3>
+      <p>Esegue il backup e il ripristino della configurazione del mio OS su Google Cloud Storage. AES-256 con PBKDF2 a 600k iterazioni, deduplica prima della cifratura, segreti in un archivio separato e un manifest che riclona ogni repo al ripristino. Lo storage Nearline con regole di lifecycle tiene basso il costo. Compatibile con più distribuzioni, pianificato con alert, testato con bats.</p>
+      <ul class="tags" aria-label="Stack"><li>Bash</li><li>GCS Nearline</li><li>OpenSSL</li><li>bats</li></ul>
+      <p class="xp-cta"><a class="btn primary" href="https://github.com/gerardocipriano/bekky" rel="noopener" aria-describedby="xp1-h">Apri il repo</a></p>
+    </div>
+    <div class="xp-vis bekky" id="bekky">
+      <canvas id="bekkyCv" width="280" height="180" aria-hidden="true"></canvas>
+      <p class="sr">24 GB di .config diventa ~100 MB di backup</p>
+      <p class="readout-note">secondo il benchmark nel README · <span>Cifrato, deduplicato, ripristinabile.</span></p>
+    </div>
+  </article>
+  <article class="xp" aria-labelledby="xp2-h">
+    <div class="xp-text">
+      <p class="xp-meta">opencode-dashboard · MIT</p>
+      <h3 id="xp2-h">opencode mission control: vista in tempo reale delle sessioni degli agenti</h3>
+      <p>Una dashboard locale in tempo reale per le sessioni di opencode v2. Mostra quali agenti lavorano, quale tool è in esecuzione, cosa è fallito e quanto ha speso. Gli alert di stallo segnalano le esecuzioni che non partono o che tacciono. Legge il database locale di opencode e non ha dipendenze npm.</p>
+      <ul class="tags" aria-label="Stack"><li>Node.js 22.5+</li><li>SQLite</li><li>SSE</li><li>opencode</li><li>Zero dipendenze</li></ul>
+      <p class="xp-cta"><a class="btn primary" href="https://github.com/gerardocipriano/opencode-dashboard" rel="noopener" aria-describedby="xp2-h">Apri il repo</a></p>
+    </div>
+    <div class="xp-vis agents" id="agentsViz"></div>
+  </article>
+  <h3 class="side-h">Strumenti di contorno: developer experience</h3>
+  <ul class="side-grid"><li><a href="https://github.com/gerardocipriano/ione" rel="noopener"><b>ione</b><span>Toolbox per sviluppatori self-hosted, per lo più lato client: JSON, SQL, XML, JWT, certificati, PDF, documenti in Markdown.</span></a></li><li><a href="https://github.com/gerardocipriano/deploy-terraform-gcp-prenotiamo" rel="noopener"><b>deploy-terraform-gcp-prenotiamo</b><span>Il mio primo Terraform, 2023: Cloud Run, Cloud SQL regionale, global load balancer, Cloud Build. Tenuto per memoria.</span></a></li></ul>
+  <p class="more"><a href="https://github.com/gerardocipriano?tab=repositories" rel="noopener">Altro su GitHub <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></p><!--/slot:experiments--></section>
+<section class="sec pods-sec" id="pods" aria-labelledby="pods-h" data-slot="pods"><!--slot:pods--><header class="sec-h"><span class="n" aria-hidden="true">06</span><h2 id="pods-h">Capsule sigillate</h2></header>
+  <p class="lede">Progetti laterali privati. Il codice resta privato; qui c'è cosa mettono alla prova.</p>
+  <ul class="pods" id="podList" style="--pods:2">
+    <li class="spod" data-pod="0"><div class="tank" aria-hidden="true"><span class="tcap">01</span><span class="tliq"></span><span class="bub"></span><span class="bub"></span><span class="bub"></span><span class="bub"></span></div>
+      <h3 class="tag-plate"><span class="pn">Capsula 01</span> <span class="pt">App assistite da LLM</span></h3><p class="psrc"><span class="pstate">Sigillata</span> · Sorgente: privata · Contenuto: solo capacità</p>
+      <button class="btn" type="button" aria-pressed="false" aria-controls="monitor">Ispeziona<span class="sr"> Capsula 01</span></button>
+      <p class="ptext" hidden>App React e Firebase che estrae dati strutturati dai documenti con un LLM a scelta. Unit test sui moduli di calcolo, test end-to-end con Playwright e una mock mode.</p></li>
+    <li class="spod" data-pod="1"><div class="tank" aria-hidden="true"><span class="tcap">02</span><span class="tliq"></span><span class="bub"></span><span class="bub"></span><span class="bub"></span><span class="bub"></span></div>
+      <h3 class="tag-plate"><span class="pn">Capsula 02</span> <span class="pt">Automazione serverless</span></h3><p class="psrc"><span class="pstate">Sigillata</span> · Sorgente: privata · Contenuto: solo capacità</p>
+      <button class="btn" type="button" aria-pressed="false" aria-controls="monitor">Ispeziona<span class="sr"> Capsula 02</span></button>
+      <p class="ptext" hidden>Dieci workflow GitHub Actions pianificati eseguono monitor in Python, inviano notifiche su Telegram e versionano la propria storia in git. Un monitor legge le immagini con un modello di visione, con un benchmark per sceglierlo.</p></li>
+  </ul>
+  <div class="monitor" id="monitor"><p class="mon-h"><span>Monitor di estrazione</span><span id="monId">inattivo</span></p><p class="mon-t" id="monText">Seleziona una capsula e premi Ispeziona. Solo capacità; il sorgente resta sigillato.</p>
+        <p class="sr" id="monLive" role="status" aria-live="polite"></p>
+      </div>
+  <noscript><style>.ptext[hidden]{display:block!important}</style></noscript><!--/slot:pods--></section>
+<section class="sec certs" id="certs" aria-labelledby="certs-h" data-slot="certs"><!--slot:certs--><header class="sec-h"><span class="n" aria-hidden="true">07</span><h2 id="certs-h">Certificazioni</h2></header>
+  <p class="lede">Certificati di taratura, controllati da qualcuno che non sono io.</p>
+  <ul class="labels">
+    <li class="cal">
+      <p class="cal-sn">CAL-ACE-2027</p>
+      <h3>Google Cloud Associate Cloud Engineer</h3>
+      <p class="cal-v">Valida fino a 11/2027</p>
+      <p class="cal-by">Rilasciata da Google Cloud</p>
+    </li>
+    <li class="cal">
+      <p class="cal-sn">CAL-AZ104-2027</p>
+      <h3>Microsoft Azure Administrator Associate <span class="nowrap">(AZ-104)</span></h3>
+      <p class="cal-v">Certificato dal 2022 · rinnovato, valido fino a 12/2027</p>
+      <p class="cal-by"><a class="cal-btn" href="https://www.credly.com/badges/f051ec71-d33c-45ea-85c9-f8ff2670bb09" rel="noopener">Verifica<span class="sr"> il badge AZ-104 su Credly</span></a></p>
+    </li>
+  </ul>
+  <p class="earlier">Certificazioni precedenti: Cisco CCNA · Microsoft 365 Identity and Services (MS-100)</p>
+  <ul class="edu"><li>Laurea triennale in Tecnologie dei Sistemi Informatici · Università di Bologna, 2021-2024</li><li>Diploma di Perito in Telecomunicazioni · IIS F. Corni, Modena, 92/100</li></ul><!--/slot:certs--></section>
+<section class="sec contact" id="contact" aria-labelledby="contact-h" data-slot="contact"><!--slot:contact--><header class="sec-h"><span class="n" aria-hidden="true">08</span><h2 id="contact-h">Collaboriamo?</h2></header>
+  <p class="lede">Cerchi qualcuno per un platform team, o vuoi discutere di strumenti GitOps? Scrivimi qui o su LinkedIn.</p>
+  <div class="contact-b">
+    <div class="channel" id="channel">
+      <p class="ch-h"><span>Canale 07</span><span id="chState" role="status">Aperto</span></p>
+      <form class="form" id="form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <input type="hidden" name="access_key" value="ca582725-4e9c-4cce-8a8a-6fcc8eccc012">
+        <input type="hidden" name="subject" value="Nuovo segnale da gerardocipriano.github.io">
+        <input type="hidden" name="from_name" value="Project GC">
+        <input type="hidden" name="redirect" value="https://gerardocipriano.github.io/#contact">
+        <div class="hp" aria-hidden="true"><label>Lascia questo campo vuoto <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label></div>
+        <p class="privacy" id="f-note">Tutti i campi sono obbligatori.</p>
+        <div class="field">
+          <label for="f-name">Nome</label>
+          
+          <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Il tuo nome" required maxlength="100" aria-describedby="e-name">
+          <p class="err" id="e-name" hidden><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg><span></span></p>
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          
+          <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="tu@azienda.it" required maxlength="200" aria-describedby="e-email">
+          <p class="err" id="e-email" hidden><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg><span></span></p>
+        </div>
+        <div class="field">
+          <label for="f-msg">Messaggio</label>
+          <p class="privacy" id="f-msg-hint">Almeno 10 caratteri.</p>
+          <textarea id="f-msg" name="message" rows="6" placeholder="Ruolo, progetto o domanda. Il testo semplice va benissimo." required minlength="10" maxlength="4000" aria-describedby="f-msg-hint e-msg"></textarea>
+          <p class="err" id="e-msg" hidden><svg class="ic" aria-hidden="true"><use href="#i-alert"/></svg><span></span></p>
+        </div>
+        <p class="form-err" id="formErr" role="alert" hidden>Il canale si è interrotto. Riprova, oppure scrivimi su <a href="https://www.linkedin.com/in/gerardo-cipriano" rel="noopener">LinkedIn</a>.</p>
+        <button class="btn primary send" id="send" type="submit"><span class="send-t">Invia messaggio</span><span class="busy-bar" aria-hidden="true"></span></button>
+        <p class="privacy">Il tuo messaggio arriva nella mia casella tramite Web3Forms. Qui non viene salvato altro.</p>
+      </form>
+      <div class="sent" id="sent" hidden><p class="sent-t" id="sentMsg" tabindex="-1">Segnale ricevuto. Ti rispondo presto.</p><button class="btn" id="again" type="button">Invia un altro messaggio</button></div>
+      <svg class="pulse" id="pulse" aria-hidden="true" preserveAspectRatio="none"><rect x="1" y="1" pathLength="100"/></svg>
+    </div>
+    <ul class="links">
+      <li><a href="https://www.linkedin.com/in/gerardo-cipriano" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-person"/></svg><span>Connettiti su LinkedIn</span></a></li>
+      <li><a href="https://github.com/gerardocipriano" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-branch"/></svg><span>Esplora il mio GitHub</span></a></li>
+      <li><a href="/assets/docs/Gerardo_Cipriano_CV_GCP.pdf" type="application/pdf"><svg class="ic" aria-hidden="true"><use href="#i-doc"/></svg><span>Scarica il CV (PDF)</span></a>
+        <a class="sub" href="/assets/docs/Gerardo_Cipriano_CV_Azure.pdf" type="application/pdf">CV focalizzato su Azure</a></li>
+    </ul>
+  </div><!--/slot:contact--></section>
+<p class="sr" id="announce" aria-live="polite"></p>
+</main>
+
+<footer class="foot" data-slot="footer"><!--slot:footer--><p>Gerardo Cipriano · costruito a mano, ospitato su GitHub Pages.</p><span class="housing" id="footHousing" aria-hidden="true"><svg class="gem" data-core="gke" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><svg class="gem" data-core="gitops" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><svg class="gem" data-core="iac" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><svg class="gem" data-core="cicd" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><svg class="gem" data-core="upg" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg><svg class="gem" data-core="ai" viewBox="0 0 16 26" aria-hidden="true" focusable="false"><polygon class="f" points="8,0 15,6 15,20 8,26 1,20 1,6"/><polygon class="hl" points="8,0 15,6 8,9 1,6"/><polygon class="sh" points="8,9 15,6 15,20 8,26"/></svg></span><a href="#top" class="totop">Torna in cima</a><!--/slot:footer--></footer>
+</body>
+</html>

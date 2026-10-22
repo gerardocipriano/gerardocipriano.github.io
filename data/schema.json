@@ -1,0 +1,633 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gerardocipriano.github.io/data/schema.json",
+  "title": "Project GC site content",
+  "description": "Every text, date, link and core colour shown by the site. Placeholders in curly braces ({v}, {n}, {stage}, {node}, {from}, {total}) are filled at runtime. Dates are ISO: YYYY-MM-DD for days, YYYY-MM for months.",
+  "type": "object",
+  "required": [
+    "version",
+    "site",
+    "person",
+    "links",
+    "nav",
+    "career",
+    "hero",
+    "spec",
+    "cores",
+    "coreChipLabel",
+    "coreFromLabel",
+    "buildLog",
+    "bench",
+    "modules",
+    "experiments",
+    "pods",
+    "certs",
+    "contact",
+    "footer",
+    "notFound",
+    "caseFiles",
+    "ui"
+  ],
+  "$defs": {
+    "link": {
+      "type": "object",
+      "required": [
+        "label",
+        "href"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        },
+        "primary": {
+          "type": "boolean"
+        }
+      }
+    },
+    "day": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "month": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}$"
+    },
+    "color": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$"
+    },
+    "section": {
+      "type": "object",
+      "required": [
+        "number",
+        "title",
+        "lede"
+      ],
+      "properties": {
+        "number": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "lede": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "properties": {
+    "version": {
+      "type": "integer",
+      "description": "Schema version of this document."
+    },
+    "site": {
+      "type": "object",
+      "required": [
+        "url",
+        "lang",
+        "title",
+        "description",
+        "brand",
+        "og",
+        "skipLink",
+        "menuLabel",
+        "menuClose"
+      ],
+      "properties": {
+        "url": {
+          "type": "string",
+          "description": "Canonical URL, with trailing slash."
+        },
+        "lang": {
+          "type": "string"
+        },
+        "locale": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "brand": {
+          "type": "string"
+        },
+        "og": {
+          "type": "object",
+          "required": [
+            "title",
+            "description",
+            "image",
+            "imageWidth",
+            "imageHeight",
+            "imageAlt"
+          ]
+        },
+        "consoleLines": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "person": {
+      "type": "object",
+      "required": [
+        "name",
+        "givenName",
+        "familyName",
+        "jobTitle",
+        "worksFor",
+        "knowsAbout"
+      ],
+      "description": "Feeds the hero name and the JSON-LD Person. No email, phone or address by design."
+    },
+    "links": {
+      "type": "object",
+      "required": [
+        "linkedin",
+        "github",
+        "cv"
+      ],
+      "properties": {
+        "linkedin": {
+          "$ref": "#/$defs/link"
+        },
+        "github": {
+          "$ref": "#/$defs/link"
+        },
+        "cv": {
+          "type": "object",
+          "required": [
+            "label",
+            "short",
+            "href"
+          ]
+        },
+        "cvAlt": {
+          "$ref": "#/$defs/link"
+        }
+      }
+    },
+    "nav": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "covers"
+        ],
+        "description": "covers: section ids that mark this entry as current."
+      }
+    },
+    "career": {
+      "type": "object",
+      "required": [
+        "start",
+        "eras"
+      ],
+      "description": "Drives the particle portrait: one particle per day from start, coloured by era.",
+      "properties": {
+        "start": {
+          "$ref": "#/$defs/day"
+        },
+        "eras": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "label",
+              "from",
+              "color"
+            ],
+            "properties": {
+              "from": {
+                "$ref": "#/$defs/day"
+              },
+              "color": {
+                "$ref": "#/$defs/color"
+              },
+              "intensity": {
+                "type": "number",
+                "description": "0-1 brightness factor for the era in the portrait."
+              }
+            }
+          }
+        }
+      }
+    },
+    "hero": {
+      "type": "object",
+      "required": [
+        "eyebrow",
+        "subtitle",
+        "text",
+        "primary",
+        "skip",
+        "play",
+        "replay",
+        "versionId",
+        "portraitLabel",
+        "portraitSample",
+        "telemetry",
+        "status",
+        "housingLabel",
+        "assembledAnnounce"
+      ]
+    },
+    "spec": {
+      "type": "object",
+      "required": [
+        "items",
+        "foot"
+      ],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "label",
+              "value",
+              "caption"
+            ]
+          }
+        }
+      }
+    },
+    "cores": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Capabilities. source is the build log entry id that lights the core when scrolled past, or \"bench\" for the test bench.",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "color",
+          "from",
+          "source",
+          "text",
+          "proof"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]*$"
+          },
+          "color": {
+            "$ref": "#/$defs/color"
+          }
+        }
+      }
+    },
+    "buildLog": {
+      "type": "object",
+      "required": [
+        "number",
+        "title",
+        "lede",
+        "entries",
+        "next",
+        "moduleLabel",
+        "monthsSuffix",
+        "presentLabel"
+      ],
+      "properties": {
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "version",
+              "title",
+              "from",
+              "org",
+              "text",
+              "module"
+            ],
+            "properties": {
+              "from": {
+                "$ref": "#/$defs/month"
+              },
+              "to": {
+                "description": "YYYY-MM, or null for the current role."
+              },
+              "kind": {
+                "enum": [
+                  "gap",
+                  "now"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "bench": {
+      "type": "object",
+      "required": [
+        "title",
+        "badge",
+        "startVersion",
+        "targetVersion",
+        "nodes",
+        "labels",
+        "messages",
+        "note"
+      ]
+    },
+    "modules": {
+      "$ref": "#/$defs/section"
+    },
+    "experiments": {
+      "type": "object",
+      "required": [
+        "number",
+        "title",
+        "lede",
+        "featured",
+        "freight",
+        "bekky",
+        "schematic",
+        "sideTitle",
+        "side",
+        "more"
+      ],
+      "properties": {
+        "featured": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "meta",
+              "title",
+              "text",
+              "tags",
+              "actions",
+              "visual"
+            ],
+            "properties": {
+              "visual": {
+                "enum": [
+                  "freight",
+                  "bekky",
+                  "schematic",
+                  "none"
+                ]
+              },
+              "actions": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/link"
+                }
+              }
+            }
+          }
+        },
+        "side": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "href",
+              "text"
+            ]
+          }
+        }
+      }
+    },
+    "pods": {
+      "type": "object",
+      "required": [
+        "number",
+        "title",
+        "lede",
+        "disclaimer",
+        "podLabel",
+        "inspect",
+        "sealed",
+        "opened",
+        "monitor",
+        "items"
+      ],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "title",
+              "text"
+            ]
+          }
+        }
+      }
+    },
+    "certs": {
+      "type": "object",
+      "required": [
+        "number",
+        "title",
+        "lede",
+        "items",
+        "earlier",
+        "education"
+      ],
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "serial",
+              "name",
+              "issuer",
+              "validity"
+            ],
+            "properties": {
+              "validUntil": {
+                "$ref": "#/$defs/month"
+              },
+              "verify": {
+                "description": "Object with label, srLabel, href; or null when no public verification link exists."
+              }
+            }
+          }
+        }
+      }
+    },
+    "contact": {
+      "type": "object",
+      "required": [
+        "number",
+        "title",
+        "lede",
+        "channel",
+        "states",
+        "form",
+        "links"
+      ],
+      "properties": {
+        "form": {
+          "type": "object",
+          "required": [
+            "endpoint",
+            "accessKey",
+            "subject",
+            "fromName",
+            "redirect",
+            "fields",
+            "send",
+            "sending",
+            "error",
+            "success",
+            "again",
+            "privacy"
+          ],
+          "description": "accessKey is the public Web3Forms key. Never put the recipient email here."
+        }
+      }
+    },
+    "footer": {
+      "type": "object",
+      "required": [
+        "text",
+        "top"
+      ]
+    },
+    "notFound": {
+      "type": "object",
+      "required": [
+        "title",
+        "eyebrow",
+        "heading",
+        "text",
+        "home",
+        "secondary",
+        "redirects"
+      ]
+    },
+    "caseFiles": {
+      "type": "object",
+      "required": [
+        "number",
+        "title",
+        "lede",
+        "labels",
+        "items"
+      ],
+      "properties": {
+        "number": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "lede": {
+          "type": "string"
+        },
+        "labels": {
+          "type": "object",
+          "required": [
+            "context",
+            "constraint",
+            "decision",
+            "result"
+          ],
+          "properties": {
+            "context": {
+              "type": "string"
+            },
+            "constraint": {
+              "type": "string"
+            },
+            "decision": {
+              "type": "string"
+            },
+            "result": {
+              "type": "string"
+            }
+          }
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "id",
+              "title",
+              "context",
+              "constraint",
+              "decision",
+              "result"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]*$"
+              },
+              "title": {
+                "type": "string",
+                "maxLength": 60,
+                "description": "Max 6 words."
+              },
+              "context": {
+                "type": "string"
+              },
+              "constraint": {
+                "type": "string"
+              },
+              "decision": {
+                "type": "string"
+              },
+              "result": {
+                "type": "string",
+                "description": "Qualitative. No invented metrics."
+              }
+            }
+          }
+        }
+      }
+    },
+    "ui": {
+      "type": "object",
+      "description": "UI labels (aria-labels and the switcher), one value per language",
+      "required": [
+        "language",
+        "sections",
+        "backToTop",
+        "keyFigures"
+      ],
+      "properties": {
+        "language": {
+          "type": "string",
+          "description": "language switcher group label"
+        },
+        "sections": {
+          "type": "string",
+          "description": "navigation landmark label"
+        },
+        "backToTop": {
+          "type": "string",
+          "description": "suffix of the brand link label"
+        },
+        "keyFigures": {
+          "type": "string",
+          "description": "label of the key figures strip"
+        }
+      }
+    }
+  }
+}

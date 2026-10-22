@@ -1,0 +1,21 @@
+/* Effects added on top of site.css: the one-time core pulse, the core hint, the wider bekky box.
+   Linked from index.html by the orchestrator. */
+
+/* the cores invite the scroll: one micro-pulse on their outlines after the boot (genesis.js, pulseCores) */
+@keyframes gc-nudge {
+  0% { filter: none; }
+  35% { filter: drop-shadow(0 0 5px var(--c, #8CF5B0)) drop-shadow(0 0 2px var(--c, #8CF5B0)); }
+  100% { filter: none; }
+}
+[data-core].nudge { animation: gc-nudge 1.4s ease-out 1 both; }
+@media (prefers-reduced-motion: reduce) { [data-core].nudge { animation: none; } }
+
+/* hint under the vessel: text from content key hero.coresHint, shown by genesis.hint() */
+#coreHint { margin: 8px 0 0; font: 500 .6667rem/1.4 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--amber); }
+#coreHint[hidden] { display: none; }
+
+/* bekky: the animation fills the box instead of a small square */
+.bekky canvas { max-width: none; width: 100%; }
+
+/* sealed pods: the form canvas sits under the caption, above the liquid */
+.tank canvas { pointer-events: none; }

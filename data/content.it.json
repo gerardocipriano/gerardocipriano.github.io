@@ -1,0 +1,824 @@
+{
+  "version": 1,
+  "site": {
+    "url": "https://gerardocipriano.github.io/",
+    "lang": "it",
+    "locale": "it_IT",
+    "title": "Gerardo Cipriano · Cloud Engineer (GCP, GKE, GitOps)",
+    "description": "Cloud engineer che costruisce piattaforme Kubernetes su Google Cloud con GKE, Terraform, ArgoCD e Kargo. Dall'help desk ai cluster di produzione. Con base in Italia.",
+    "brand": "Gerardo Cipriano",
+    "og": {
+      "title": "Gerardo Cipriano · Cloud Engineer",
+      "description": "Progetto e gestisco piattaforme GKE su Google Cloud. Leggi il build log: dall'help desk a Kubernetes, un upgrade alla volta.",
+      "image": "/assets/site/img/og-image.png",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "imageAlt": "Ritratto di Gerardo Cipriano fatto di particelle verdi dentro un vaso da laboratorio, accanto al nome e alla scritta Cloud Engineer, GKE, Terraform, GitOps"
+    },
+    "skipLink": "Vai al contenuto",
+    "menuLabel": "Menu",
+    "menuClose": "Chiudi menu",
+    "consoleLines": [
+      "PROGETTO GC  ·  LAB 07",
+      "Curioso? Il sorgente è su GitHub: https://github.com/gerardocipriano/gerardocipriano.github.io"
+    ]
+  },
+  "person": {
+    "name": "Gerardo Cipriano",
+    "givenName": "Gerardo",
+    "familyName": "Cipriano",
+    "jobTitle": "Cloud Engineer",
+    "description": "Cloud engineer che costruisce e gestisce piattaforme Kubernetes su Google Cloud, e ci rilascia sopra con GitOps.",
+    "worksFor": "Dinova S.r.l.",
+    "homeLocation": "Emilia-Romagna, Italia",
+    "alumniOf": "University of Bologna",
+    "knowsLanguage": [
+      "en",
+      "it"
+    ],
+    "knowsAbout": [
+      "Google Cloud",
+      "Kubernetes",
+      "GKE",
+      "Terraform",
+      "ArgoCD",
+      "Kargo",
+      "GitOps",
+      "CI/CD",
+      "Helm",
+      "Azure",
+      "AKS"
+    ]
+  },
+  "links": {
+    "linkedin": {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/gerardo-cipriano"
+    },
+    "github": {
+      "label": "GitHub",
+      "href": "https://github.com/gerardocipriano"
+    },
+    "cv": {
+      "label": "Scarica il CV (PDF)",
+      "short": "Scarica CV",
+      "pdf": "PDF",
+      "href": "/assets/docs/Gerardo_Cipriano_CV_GCP.pdf"
+    },
+    "cvAlt": {
+      "label": "CV focalizzato su Azure",
+      "href": "/assets/docs/Gerardo_Cipriano_CV_Azure.pdf"
+    }
+  },
+  "nav": [
+    {
+      "id": "log",
+      "label": "Esperienza",
+      "covers": [
+        "log",
+        "bench"
+      ]
+    },
+    {
+      "id": "cases",
+      "label": "Casi di studio",
+      "covers": [
+        "cases"
+      ]
+    },
+    {
+      "id": "modules",
+      "label": "Competenze",
+      "covers": [
+        "modules"
+      ]
+    },
+    {
+      "id": "experiments",
+      "label": "Progetti",
+      "covers": [
+        "experiments",
+        "pods"
+      ]
+    },
+    {
+      "id": "certs",
+      "label": "Certificazioni",
+      "covers": [
+        "certs"
+      ]
+    },
+    {
+      "id": "contact",
+      "label": "Contatti",
+      "covers": [
+        "contact"
+      ]
+    }
+  ],
+  "career": {
+    "start": "2018-03-01",
+    "eras": [
+      {
+        "id": "helpdesk",
+        "label": "Help desk",
+        "from": "2018-03-01",
+        "color": "#3E7D5A"
+      },
+      {
+        "id": "sysadmin",
+        "label": "Sistemista",
+        "from": "2020-07-01",
+        "color": "#6FB98E"
+      },
+      {
+        "id": "maintenance",
+        "label": "Università",
+        "from": "2022-10-01",
+        "color": "#F2B33D",
+        "intensity": 0.5
+      },
+      {
+        "id": "cloud",
+        "label": "Cloud",
+        "from": "2023-09-01",
+        "color": "#B8FFD0"
+      }
+    ]
+  },
+  "hero": {
+    "eyebrow": "Progetto GC · Build v3 · Stato: in esecuzione",
+    "nightShift": " · turno di notte",
+    "subtitle": "Cloud engineer. Assemblato un upgrade alla volta.",
+    "text": "Progetto e gestisco piattaforme Kubernetes su Google Cloud per clienti SaaS: GKE, Terraform, ArgoCD e Kargo. Tre anni nel cloud, otto nell'IT, dall'help desk ai cluster di produzione.",
+    "primary": {
+      "label": "Leggi il build log",
+      "href": "#log"
+    },
+    "skip": "Ferma tutte le animazioni",
+    "play": "Avvia animazioni",
+    "replay": "Riavvia",
+    "versionId": "GC-v3",
+    "portraitLabel": "Ritratto di Gerardo Cipriano fatto di particelle, una per ogni giorno della sua carriera IT dal marzo 2018",
+    "portraitSample": "/assets/site/img/portrait-luma.png",
+    "telemetryTitle": "In esecuzione ora",
+    "telemetry": {
+      "t": "T+",
+      "temp": "Temperatura",
+      "date": "Data",
+      "particles": "Particelle",
+      "phase": "Fase"
+    },
+    "compositionTitle": "Composizione",
+    "note": "Una particella per ogni giorno nell'IT dal marzo 2018, disposte in ordine di data: gli anni dell'help desk alla base, quelli nel cloud in cima.",
+    "status": {
+      "standby": "standby",
+      "expansion": "espansione",
+      "plasma": "plasma",
+      "nucleosynthesis": "nucleosintesi",
+      "structure": "struttura",
+      "singularity": "singolarità",
+      "running": "build v3 · stato: in esecuzione",
+      "assembled": "assemblaggio completo",
+      "override": "controllo manuale"
+    },
+    "days": "giorni",
+    "daysShort": "g",
+    "coresSuffix": "nuclei",
+    "housingLabel": "Nuclei raccolti: {n} su {total}",
+    "assembledAnnounce": "Tutti e sei i nuclei raccolti. Assemblaggio completato.",
+    "nowRunning": {
+      "rows": [
+        {
+          "label": "Ruolo",
+          "value": "Cloud Engineer · Dinova"
+        },
+        {
+          "label": "Stack",
+          "value": "GKE · Terraform · ArgoCD · Kargo"
+        },
+        {
+          "label": "Certificato",
+          "value": "Google Cloud ACE · Azure AZ-104"
+        }
+      ]
+    },
+    "coresHint": "0/6 nuclei · scorri per caricare"
+  },
+  "spec": {
+    "ariaLabel": "Numeri chiave",
+    "items": [
+      {
+        "label": "Uptime nell'IT",
+        "value": "8+ anni",
+        "caption": "dal 2018"
+      },
+      {
+        "label": "Cloud e platform",
+        "value": "3 anni",
+        "caption": "GKE, Terraform, GitOps"
+      },
+      {
+        "label": "Cloud certificati",
+        "value": "2",
+        "caption": "Google Cloud + Azure, validi fino al 2027"
+      },
+      {
+        "label": "Upgrade più grande",
+        "value": "6 versioni minori",
+        "caption": "Kubernetes v1.24 → v1.30, on-prem e cloud, senza interruzioni di servizio"
+      }
+    ],
+    "foot": "Con base in Emilia-Romagna, Italia · Inglese (professionale) e italiano (madrelingua)"
+  },
+  "cores": [
+    {
+      "id": "gke",
+      "name": "Piattaforme GKE per SaaS",
+      "color": "#4FD1E8",
+      "from": "GC-v3",
+      "source": "gcv3",
+      "text": "Cluster Autopilot e Standard con Cloud SQL condiviso o dedicato, storage GCS Fuse, certificati gestiti e DNS che si configura da solo.",
+      "proof": "In produzione al lavoro · lab pubblico su GitHub"
+    },
+    {
+      "id": "gitops",
+      "name": "GitOps, dall'inizio alla fine",
+      "color": "#B69CFF",
+      "from": "GC-v3",
+      "source": "gcv3",
+      "text": "ArgoCD con Image Updater in produzione. Kargo per la promozione progressiva da dev a staging fino a prod.",
+      "proof": "In produzione al lavoro · pipeline Kargo nel mio lab GitOps"
+    },
+    {
+      "id": "iac",
+      "name": "Infrastructure as Code",
+      "color": "#F2B33D",
+      "from": "GC-v3",
+      "source": "maintenance",
+      "text": "Terraform modulare su Google Cloud e Azure. Su GCP: Cloud Run, Cloud SQL regionale, global load balancing, Cloud Build, alerting.",
+      "proof": "Moduli per clienti al lavoro · primo IaC pubblico dal 2023"
+    },
+    {
+      "id": "cicd",
+      "name": "CI/CD su qualsiasi piattaforma",
+      "color": "#C6F36B",
+      "from": "GC-v3",
+      "source": "gcv3",
+      "text": "GitHub Actions, GitLab CI e Azure DevOps in produzione. Job pianificati, workflow di rilascio, Jenkins containerizzato nel lab.",
+      "proof": "3 piattaforme al lavoro · 6 repo pubblici con workflow"
+    },
+    {
+      "id": "upg",
+      "name": "Upgrade senza drammi",
+      "color": "#F4F1E8",
+      "from": "GC-v3",
+      "source": "gcv3",
+      "text": "Kubernetes dalla v1.24 alla v1.30, da Ingress a Gateway API, VM spostate in container su GKE e AKS, applicazioni migrate tra cluster. Pianificati, provati, senza interruzioni di servizio.",
+      "proof": "Al lavoro, on-prem e cloud"
+    },
+    {
+      "id": "ai",
+      "name": "Delivery cloud assistita dall'AI",
+      "color": "#FF4F79",
+      "from": "GC-v3",
+      "source": "gcv3",
+      "text": "Per le migrazioni su GCP scrivo discovery, technical design, stima dei costi e piano di backup e DR. Uso agenti AI per automatizzare e standardizzare questo lavoro. Ho costruito skill per stime dei costi, documenti PDF per i clienti e diagrammi di architettura, e contribuisco alla libreria di skill per agenti AI del team.",
+      "proof": "Deliverable per clienti al lavoro · contributor alla libreria AI del team"
+    }
+  ],
+  "coreChipLabel": "Competenza",
+  "coreFromLabel": "Nucleo · dal {from}",
+  "buildLog": {
+    "number": "02",
+    "title": "Esperienza",
+    "lede": "Il build log: ogni versione ha conservato i moduli della precedente. Nulla è stato buttato, solo aggiornato.",
+    "moduleLabel": "Modulo installato",
+    "monthsSuffix": "mesi",
+    "presentLabel": "oggi",
+    "entries": [
+      {
+        "id": "gcv1",
+        "version": "GC-v1",
+        "title": "IT Help Desk",
+        "from": "2018-03",
+        "to": "2020-06",
+        "org": "GPI S.p.A., Modena",
+        "text": "Primo contatto con utenti reali e disservizi reali. Supporto in sede e da remoto per il Comune di Modena, il Policlinico di Modena, UniMoRe e AUSL Modena. Migrazione a Windows 10 al Policlinico e in UniMoRe per rispettare i requisiti AGID.",
+        "module": "empatia per chi apre il ticket"
+      },
+      {
+        "id": "gcv2",
+        "version": "GC-v2",
+        "title": "Sistemista",
+        "from": "2020-07",
+        "to": "2022-09",
+        "org": "F.T.P. S.r.l., Formigine",
+        "text": "Gestione dell'infrastruttura per piccole e medie imprese: VMware ESXi, Hyper-V, Windows Server, Active Directory, GPO, WSUS, DHCP e DNS. Backup con Veeam, firewall Sophos e Fortinet, migrazioni M365 completate end to end.",
+        "module": "un backup esiste davvero solo dopo averlo ripristinato"
+      },
+      {
+        "id": "maintenance",
+        "version": "Finestra di manutenzione programmata",
+        "title": "Focus sulla laurea",
+        "from": "2022-10",
+        "to": "2023-08",
+        "org": "University of Bologna",
+        "kind": "gap",
+        "text": "Undici mesi dedicati alla laurea in Tecnologie dei Sistemi Informatici all'Università di Bologna, conseguita nel 2024. Qui ho scritto il mio primo Terraform su Google Cloud.",
+        "module": "infrastruttura come codice"
+      },
+      {
+        "id": "gcv3",
+        "version": "GC-v3 · attuale",
+        "title": "Cloud Engineer / DevOps Specialist",
+        "from": "2023-09",
+        "to": null,
+        "org": "Dinova S.r.l., Bologna",
+        "kind": "now",
+        "text": "Costruisco e gestisco piattaforme GKE per clienti SaaS: Terraform modulare, cluster Autopilot, Cloud SQL condiviso o dedicato, impacchettati come chart Helm e rilasciati con ArgoCD. Ho portato i cluster da Kubernetes v1.24 a v1.30 e da Ingress a Gateway API senza interruzioni di servizio, ho spostato workload da VM a container su GKE e AKS, e gestisco CI/CD su GitHub Actions, GitLab CI e Azure DevOps. Uso anche agenti AI per produrre documenti di discovery, technical design e stime dei costi.",
+        "module": "la paranoia del sistemista, ora dichiarativa"
+      }
+    ],
+    "next": {
+      "command": "$ next-version --status",
+      "status": "compilazione in corso..."
+    }
+  },
+  "bench": {
+    "title": "Banco di prova · Aggiorna il cluster",
+    "badge": "Simulazione · i numeri non sono reali",
+    "startVersion": 24,
+    "targetVersion": 30,
+    "nodes": [
+      "node-a",
+      "node-b",
+      "node-c"
+    ],
+    "labels": {
+      "controlPlane": "Control plane",
+      "upgrade": "Aggiorna a v1.{v}",
+      "onTarget": "Su v1.{v}",
+      "jump": "Salta a v1.{v}",
+      "roll": "Aggiorna nodo",
+      "rollAria": "{node} a v1.{v}",
+      "nodeOnAria": "{node}, già su v1.{v}",
+      "nodesAria": "Nodi worker",
+      "served": "Richieste servite",
+      "dropped": "Perse",
+      "auto": "Automatizza il resto",
+      "reset": "Ripristina",
+      "states": {
+        "ready": "pronto",
+        "cordoned": "isolato",
+        "draining": "in svuotamento",
+        "upgrading": "in aggiornamento"
+      }
+    },
+    "messages": {
+      "start": "Il cluster gira su v1.24. Portalo a v1.30 senza perdere richieste. Aggiorna il control plane, poi ogni nodo.",
+      "cpDone": "Control plane su v1.{v}. Ora aggiorna i nodi, uno alla volta.",
+      "skewNodes": "La skew policy dice no. Porta prima ogni nodo a v1.{v}.",
+      "skewJump": "La skew policy dice no. Una versione minore alla volta.",
+      "manualDone": "v1.25 fatta a mano. Ora conosci i passaggi: automatizza il resto.",
+      "automating": "Automazione in corso: prima il control plane, poi un nodo alla volta.",
+      "finishedClean": "v1.30 raggiunta. Zero richieste perse in questa simulazione; nella realtà, lo stesso on-prem e in cloud.",
+      "finishedDrops": "v1.30 raggiunta con {n} richieste perse. Aggiorna un nodo alla volta e i pod avranno sempre dove andare.",
+      "pending": "{n} pod in attesa: nessuno spazio per schedularli.",
+      "behind": "I nodi su una versione più vecchia del control plane vanno aggiornati.",
+      "draining": "{node} in svuotamento",
+      "ready": "{node} pronto su v1.{v}",
+      "dropping": "Richieste in perdita: {n} pod in attesa."
+    },
+    "note": "Regola reale: una versione minore alla volta, prima il control plane. Aggiorna un nodo alla volta, così i pod hanno sempre dove andare."
+  },
+  "modules": {
+    "number": "04",
+    "title": "Competenze",
+    "lede": "Moduli principali: cosa porto in un platform team e dove stanno le prove.",
+    "also": "Anche a bordo: Helm · Docker · Bash · Python · Azure (AKS, Azure DevOps) · Prometheus e Grafana · Linux · networking"
+  },
+  "experiments": {
+    "number": "05",
+    "title": "Progetti",
+    "lede": "Progetti open source nati per imparare, per risolvere problemi miei, o per entrambe le cose. Tutto il codice è pubblico.",
+    "tagsLabel": "Stack",
+    "featured": [
+      {
+        "id": "gitops-lab",
+        "meta": "gke-gitlab-argocd-all-in-one-setup · 2026",
+        "title": "Lab GitOps con un solo comando",
+        "visual": "freight",
+        "text": "Un comando avvia un ambiente GitOps completo su kind o GKE: GitLab CE come server Git, ArgoCD con il pattern app-of-apps e Kargo che promuove le release da dev a staging a prod. Una demo guidata in 10 passi la illustra e un teardown guidato la smonta. Su GKE il control plane è raggiungibile solo tramite il suo endpoint DNS, con IAM.",
+        "tags": [
+          "GKE",
+          "kind",
+          "ArgoCD",
+          "Kargo",
+          "GitLab CE",
+          "Bash"
+        ],
+        "actions": [
+          {
+            "label": "Apri il repo",
+            "href": "https://github.com/gerardocipriano/gke-gitlab-argocd-all-in-one-setup",
+            "primary": true
+          },
+          {
+            "label": "Esegui la demo",
+            "href": "https://github.com/gerardocipriano/gke-gitlab-argocd-all-in-one-setup/blob/main/docs/KARGO-DEMO.md"
+          }
+        ]
+      },
+      {
+        "id": "bekky",
+        "meta": "bekky · 2026",
+        "title": "bekky: backup cifrati di un'intera workstation",
+        "visual": "bekky",
+        "text": "Esegue il backup e il ripristino della configurazione del mio OS su Google Cloud Storage. AES-256 con PBKDF2 a 600k iterazioni, deduplica prima della cifratura, segreti in un archivio separato e un manifest che riclona ogni repo al ripristino. Lo storage Nearline con regole di lifecycle tiene basso il costo. Compatibile con più distribuzioni, pianificato con alert, testato con bats.",
+        "tags": [
+          "Bash",
+          "GCS Nearline",
+          "OpenSSL",
+          "bats"
+        ],
+        "actions": [
+          {
+            "label": "Apri il repo",
+            "href": "https://github.com/gerardocipriano/bekky",
+            "primary": true
+          }
+        ]
+      },
+      {
+        "id": "opencode-dashboard",
+        "meta": "opencode-dashboard · MIT",
+        "title": "opencode mission control: vista in tempo reale delle sessioni degli agenti",
+        "visual": "agents",
+        "text": "Una dashboard locale in tempo reale per le sessioni di opencode v2. Mostra quali agenti lavorano, quale tool è in esecuzione, cosa è fallito e quanto ha speso. Gli alert di stallo segnalano le esecuzioni che non partono o che tacciono. Legge il database locale di opencode e non ha dipendenze npm.",
+        "tags": [
+          "Node.js 22.5+",
+          "SQLite",
+          "SSE",
+          "opencode",
+          "Zero dipendenze"
+        ],
+        "actions": [
+          {
+            "label": "Apri il repo",
+            "href": "https://github.com/gerardocipriano/opencode-dashboard",
+            "primary": true
+          }
+        ]
+      }
+    ],
+    "freight": {
+      "title": "Promuovi il freight",
+      "badge": "Simulazione",
+      "warehouse": "Magazzino",
+      "warehouseSub": "nuovo freight",
+      "stages": [
+        {
+          "name": "dev",
+          "replicas": 1,
+          "sub": "1 replica"
+        },
+        {
+          "name": "staging",
+          "replicas": 2,
+          "sub": "2 repliche"
+        },
+        {
+          "name": "prod",
+          "replicas": 3,
+          "sub": "3 repliche"
+        }
+      ],
+      "idle": "Il freight aspetta in magazzino.",
+      "button": "Promuovi a {stage}",
+      "again": "Esegui di nuovo",
+      "moving": "Promozione del freight a {stage} in corso...",
+      "verified": [
+        "dev esegue il nuovo freight su 1 replica. Verificato; staging è il prossimo.",
+        "staging lo esegue su 2 repliche. Verificato; prod è il prossimo."
+      ],
+      "syncing": "Sync di ArgoCD in corso...",
+      "done": "Synced · Healthy. Promosso. Vuoi quella reale? Si avvia con un solo comando:",
+      "doneLink": {
+        "label": "apri il repo",
+        "href": "https://github.com/gerardocipriano/gke-gitlab-argocd-all-in-one-setup"
+      }
+    },
+    "bekky": {
+      "from": "24 GB",
+      "fromSuffix": "di .config",
+      "to": "~100 MB",
+      "toSuffix": "di backup",
+      "joiner": "diventa",
+      "note": "secondo il benchmark nel README",
+      "caption": "Cifrato, deduplicato, ripristinabile."
+    },
+    "schematic": {
+      "title": "Scheda di assemblaggio: gli utenti raggiungono un global load balancer, che instrada verso Cloud Run; Cloud Run usa Cloud SQL regionale con uno standby; Cloud Build fa il deploy su Cloud Run; le alert policy controllano lo stack.",
+      "boxes": {
+        "users": "UTENTI",
+        "lb": [
+          "GLOBAL",
+          "LB"
+        ],
+        "run": "CLOUD RUN",
+        "sql": [
+          "CLOUD SQL",
+          "REGIONAL"
+        ],
+        "build": "CLOUD BUILD"
+      },
+      "legend": [
+        "Global load balancer davanti",
+        "Cloud Run serve l'app Nuxt 3",
+        "Cloud SQL regionale, con standby",
+        "Cloud Build avvia il deploy",
+        "Le alert policy controllano tutto"
+      ]
+    },
+    "sideTitle": "Strumenti di contorno: developer experience",
+    "side": [
+      {
+        "name": "ione",
+        "href": "https://github.com/gerardocipriano/ione",
+        "text": "Toolbox per sviluppatori self-hosted, per lo più lato client: JSON, SQL, XML, JWT, certificati, PDF, documenti in Markdown."
+      },
+      {
+        "name": "deploy-terraform-gcp-prenotiamo",
+        "href": "https://github.com/gerardocipriano/deploy-terraform-gcp-prenotiamo",
+        "text": "Il mio primo Terraform, 2023: Cloud Run, Cloud SQL regionale, global load balancer, Cloud Build. Tenuto per memoria."
+      }
+    ],
+    "more": {
+      "label": "Altro su GitHub",
+      "href": "https://github.com/gerardocipriano?tab=repositories"
+    },
+    "dashboardViz": {
+      "title": "opencode mission control",
+      "live": "live",
+      "aria": "Anteprima animata della dashboard di opencode: quattro sessioni di agenti di coding con chiamate di tool in tempo reale e un costo in corso. Una sessione va in stallo, viene terminata e riavviata.",
+      "state": {
+        "run": "in esecuzione",
+        "idle": "inattivo",
+        "done": "completato",
+        "stall": "stallo",
+        "killed": "terminato"
+      },
+      "notes": {
+        "stall": "alert di stallo · nessun output da 90 s",
+        "killed": "terminato · riavvio della sessione",
+        "resolved": "risolto · sessione riavviata"
+      },
+      "ok": "ok",
+      "waiting": "in attesa di un prompt",
+      "total": "totale",
+      "tokens": "tok",
+      "sessions": [
+        {
+          "name": "plan-api",
+          "calls": [
+            "Read src/routes.ts",
+            "Edit src/routes.ts",
+            "Bash npm test",
+            "Edit src/routes.ts",
+            "Bash npm test"
+          ]
+        },
+        {
+          "name": "tf-network",
+          "calls": [
+            "Read main.tf",
+            "Bash terraform plan",
+            "Edit main.tf",
+            "Bash terraform plan"
+          ]
+        },
+        {
+          "name": "docs-sync",
+          "calls": [
+            "Grep \"TODO\"",
+            "Read README.md",
+            "Write CHANGELOG.md"
+          ]
+        },
+        {
+          "name": "release-notes",
+          "calls": [
+            "Glob \"*.md\"",
+            "Read CHANGELOG.md",
+            "Bash git log",
+            "Write RELEASE.md"
+          ]
+        }
+      ]
+    }
+  },
+  "pods": {
+    "number": "06",
+    "title": "Capsule sigillate",
+    "lede": "Progetti laterali privati. Il codice resta privato; qui c'è cosa mettono alla prova.",
+    "disclaimer": "Sorgente: privata · Contenuto: solo capacità",
+    "podLabel": "Capsula",
+    "inspect": "Ispeziona",
+    "sealed": "Sigillata",
+    "opened": "Aperta",
+    "monitor": {
+      "title": "Monitor di estrazione",
+      "idle": "inattivo",
+      "intro": "Seleziona una capsula e premi Ispeziona. Solo capacità; il sorgente resta sigillato.",
+      "resealed": "Capsula risigillata. Seleziona una capsula e premi Ispeziona.",
+      "final": "Capacità estratte. Il sorgente resta sigillato."
+    },
+    "items": [
+      {
+        "title": "App assistite da LLM",
+        "text": "App React e Firebase che estrae dati strutturati dai documenti con un LLM a scelta. Unit test sui moduli di calcolo, test end-to-end con Playwright e una mock mode."
+      },
+      {
+        "title": "Automazione serverless",
+        "text": "Dieci workflow GitHub Actions pianificati eseguono monitor in Python, inviano notifiche su Telegram e versionano la propria storia in git. Un monitor legge le immagini con un modello di visione, con un benchmark per sceglierlo."
+      }
+    ]
+  },
+  "certs": {
+    "number": "07",
+    "title": "Certificazioni",
+    "lede": "Certificati di taratura, controllati da qualcuno che non sono io.",
+    "items": [
+      {
+        "serial": "CAL-ACE-2027",
+        "name": "Google Cloud Associate Cloud Engineer",
+        "issuer": "Google Cloud",
+        "issuedBy": "Rilasciata da Google Cloud",
+        "validity": "Valida fino a 11/2027",
+        "validUntil": "2027-11",
+        "verify": null
+      },
+      {
+        "serial": "CAL-AZ104-2027",
+        "name": "Microsoft Azure Administrator Associate",
+        "code": "AZ-104",
+        "issuer": "Microsoft",
+        "validity": "Certificato dal 2022 · rinnovato, valido fino a 12/2027",
+        "validUntil": "2027-12",
+        "verify": {
+          "label": "Verifica",
+          "srLabel": "il badge AZ-104 su Credly",
+          "href": "https://www.credly.com/badges/f051ec71-d33c-45ea-85c9-f8ff2670bb09"
+        }
+      }
+    ],
+    "earlier": "Certificazioni precedenti: Cisco CCNA · Microsoft 365 Identity and Services (MS-100)",
+    "education": [
+      "Laurea triennale in Tecnologie dei Sistemi Informatici · Università di Bologna, 2021-2024",
+      "Diploma di Perito in Telecomunicazioni · IIS F. Corni, Modena, 92/100"
+    ]
+  },
+  "contact": {
+    "number": "08",
+    "title": "Collaboriamo?",
+    "lede": "Cerchi qualcuno per un platform team, o vuoi discutere di strumenti GitOps? Scrivimi qui o su LinkedIn.",
+    "channel": "Canale 07",
+    "states": {
+      "open": "Aperto",
+      "sending": "Invio in corso",
+      "received": "Segnale ricevuto"
+    },
+    "form": {
+      "endpoint": "https://api.web3forms.com/submit",
+      "accessKey": "ca582725-4e9c-4cce-8a8a-6fcc8eccc012",
+      "subject": "Nuovo segnale da gerardocipriano.github.io",
+      "fromName": "Project GC",
+      "redirect": "https://gerardocipriano.github.io/#contact",
+      "honeypot": "Lascia questo campo vuoto",
+      "timeoutMs": 12000,
+      "fields": {
+        "name": {
+          "label": "Nome",
+          "placeholder": "Il tuo nome",
+          "error": "Inserisci il tuo nome.",
+          "max": 100
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "tu@azienda.it",
+          "error": "L'email sembra incompleta.",
+          "max": 200
+        },
+        "message": {
+          "label": "Messaggio",
+          "placeholder": "Ruolo, progetto o domanda. Il testo semplice va benissimo.",
+          "error": "Qualche parola in più, per favore (almeno 10 caratteri).",
+          "hint": "Almeno 10 caratteri.",
+          "min": 10,
+          "max": 4000
+        }
+      },
+      "send": "Invia messaggio",
+      "sending": "Invio in corso...",
+      "error": "Il canale si è interrotto. Riprova, oppure scrivimi su",
+      "success": "Segnale ricevuto. Ti rispondo presto.",
+      "again": "Invia un altro messaggio",
+      "privacy": "Il tuo messaggio arriva nella mia casella tramite Web3Forms. Qui non viene salvato altro.",
+      "note": "Tutti i campi sono obbligatori."
+    },
+    "links": [
+      {
+        "icon": "person",
+        "label": "Connettiti su LinkedIn",
+        "ref": "linkedin"
+      },
+      {
+        "icon": "branch",
+        "label": "Esplora il mio GitHub",
+        "ref": "github"
+      },
+      {
+        "icon": "doc",
+        "label": "Scarica il CV (PDF)",
+        "ref": "cv",
+        "sub": "cvAlt"
+      }
+    ]
+  },
+  "footer": {
+    "text": "Gerardo Cipriano · costruito a mano, ospitato su GitHub Pages.",
+    "top": "Torna in cima"
+  },
+  "notFound": {
+    "title": "Segnale perso · Project GC",
+    "eyebrow": "Errore 404 · Stato: nessuna portante",
+    "heading": [
+      "Segnale",
+      "perso"
+    ],
+    "text": "Questa pagina non è nel laboratorio. Potrebbe essersi spostata quando il sito è stato rifatto: ora tutto vive in un'unica pagina.",
+    "home": "Torna al laboratorio",
+    "secondary": {
+      "label": "Leggi il build log",
+      "href": "/#log"
+    },
+    "redirects": {
+      "experience": "#log",
+      "education": "#certs",
+      "projects": "#experiments",
+      "portfolio": "#contact"
+    }
+  },
+  "caseFiles": {
+    "number": "03",
+    "title": "Casi di studio",
+    "lede": "Quattro problemi su Google Cloud, con i vincoli e la decisione per ciascuno. I clienti non sono citati.",
+    "labels": {
+      "context": "Contesto",
+      "constraint": "Vincolo",
+      "decision": "Decisione",
+      "result": "Risultato"
+    },
+    "items": [
+      {
+        "id": "k8s-upgrade",
+        "title": "Upgrade di Kubernetes dalla 1.24 alla 1.30",
+        "context": "Cluster ancora su Kubernetes v1.24, on-prem e in cloud, già fuori dal supporto upstream.",
+        "constraint": "Il traffico di produzione non poteva fermarsi. Ogni passo andava pianificato e provato prima.",
+        "decision": "Una versione minore alla volta, prima il control plane, poi i nodi aggiornati uno alla volta, così i pod hanno sempre dove andare.",
+        "result": "I cluster girano su v1.30 senza interruzioni di servizio."
+      },
+      {
+        "id": "gcs-fuse",
+        "title": "Storage condiviso su GKE senza NFS",
+        "context": "I workload SaaS su GKE condividevano file via NFS: un server in più da patchare, dimensionare e backuppare.",
+        "constraint": "Nessuna interruzione di servizio per i tenant.",
+        "decision": "NFS sostituito con GCS Fuse, provisionato con Terraform e montato tramite il chart Helm.",
+        "result": "Per questo workload non resta nessun server NFS da patchare, dimensionare o backuppare."
+      },
+      {
+        "id": "image-updater",
+        "title": "Release promosse da ArgoCD Image Updater",
+        "context": "Ogni nuova immagine richiedeva una modifica manuale dei manifest prima di arrivare in produzione.",
+        "constraint": "Ogni modifica doveva passare da Git, così lo stato di ogni ambiente resta verificabile.",
+        "decision": "ArgoCD Image Updater rileva le nuove immagini e aggiorna l'ambiente target da Git, senza modifiche manuali nel percorso di rilascio.",
+        "result": "Le nuove build arrivano negli ambienti live senza un passaggio manuale, e Git mostra cosa gira dove."
+      },
+      {
+        "id": "ai-cost-estimates",
+        "title": "Stime dei costi cloud automatizzate",
+        "context": "Le stime dei costi cloud richiedevano troppo tempo se fatte a mano, ed era rischioso condividerle con i clienti.",
+        "constraint": "Ogni cifra deve essere tracciabile, e i dettagli interni non devono mai arrivare nel file del cliente.",
+        "decision": "Una skill di agenti AI legge i listini ufficiali dalle API di billing del provider e genera workbook basati su formule da un modello dati. Le viste per il cliente e quelle interne sono separate.",
+        "result": "Ogni stima viene ricalcolata, controllata per termini riservati e rivista da un agente indipendente prima di arrivare al cliente."
+      }
+    ]
+  },
+  "ui": {
+    "language": "Lingua",
+    "sections": "Sezioni",
+    "backToTop": "torna all'inizio",
+    "keyFigures": "Numeri chiave"
+  }
+}

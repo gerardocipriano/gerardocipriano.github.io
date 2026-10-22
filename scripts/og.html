@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<!-- og:image source. Serve the repo root, open /scripts/og.html at 1200x630 and screenshot it to assets/site/img/og-image.png -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="/assets/site/site.css">
+<style>
+body{width:1200px;height:630px;overflow:hidden}
+.og{position:relative;z-index:1;display:grid;grid-template-columns:auto 1fr;gap:64px;align-items:center;height:630px;padding:0 72px}
+.og .vessel{grid-area:auto;height:520px;margin-left:24px}
+.og h1{font:900 124px/.84 var(--disp);text-transform:uppercase;color:var(--ph-hi);text-shadow:var(--bloom)}
+.og h1 span{display:block;color:transparent;-webkit-text-stroke:2px var(--ph)}
+.og .eyebrow{font-size:16px;margin-bottom:28px}
+.og p.l{font:600 23px/1.3 var(--mono);color:var(--ph);margin-top:34px}
+.og .sq{display:flex;gap:8px;margin-top:30px}
+</style></head><body>
+<div class="og">
+ <div class="vessel" id="vessel"><div class="cap top"></div><div class="glass formed" id="glass"><picture><img src="/assets/site/img/portrait-duo-840.webp" alt=""></picture><canvas id="cv"></canvas></div><div class="ticks" id="ticks"></div><div class="cap bot"><span class="v-id">GC-v3</span><span class="housing" id="housing"></span><em></em></div></div>
+ <div><p class="eyebrow">Project GC · Build v3 · Status: running</p><h1 id="nm"></h1><p class="l" id="ln"></p><div class="housing sq" id="h2"></div></div>
+</div>
+<style id="th"></style>
+<script type="module">
+import * as R from '/assets/site/js/render.js';
+import { createGenesis } from '/assets/site/js/genesis.js';
+const C = await (await fetch('/data/content.json')).json(); const D = R.derive(C);
+document.getElementById('th').outerHTML = R.theme(C);
+document.getElementById('nm').innerHTML = C.person.givenName + '<span>' + C.person.familyName + '</span>';
+document.getElementById('ln').textContent = C.person.jobTitle + ' · GKE, Terraform, GitOps';
+document.getElementById('housing').innerHTML = R.housing(C); document.getElementById('h2').innerHTML = R.housing(C);
+document.querySelectorAll('.gem').forEach(g => { g.classList.add('lit'); g.style.width='18px'; g.style.height='29px'; });
+const hex = h => [1,3,5].map(i => parseInt(h.slice(i,i+2),16)); const css = getComputedStyle(document.documentElement);
+const $ = s => document.querySelector(s); const t = {T:{},K:{},D:{},N:{},P:{}};
+const g = createGenesis({ glass:$('#glass'), canvas:$('#cv'), ticks:$('#ticks'), src:C.hero.portraitSample, days:D.days, eraOf:D.eraOf, fmtDay:D.fmtDay, dayOf:D.dayOf,
+  eraRGB:C.career.eras.map(e=>hex(e.color)), eraIntensity:C.career.eras.map(e=>e.intensity??1), coreRGB:C.cores.map(c=>hex(c.color)), heatRGB:['--plasma-low','--plasma-mid','--plasma-hot'].map(v=>hex(css.getPropertyValue(v).trim())),
+  low:()=>true, firstBoot:()=>false, tel:t, label:p=>p, status:()=>{}, onStart:()=>{}, onDone:()=>{} });
+await g.ready; g.toStatic(); await document.fonts.ready; window.__ready = true;
+</script></body></html>
